@@ -1,0 +1,19 @@
+{
+  "classification": "endpoint_invalidity",
+  "config_sha256": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+  "endpoint_invalidity_criteria": {
+    "drop_positive_every_seed": true,
+    "finite_and_material": true,
+    "mean_drop_at_least_2pp": true,
+    "mean_early_within_1pp_of_trained_terminal": true,
+    "probe_mean_directional_agreement": true
+  },
+  "experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+  "stable_criteria": {
+    "endpoint_residual_no_greater_than_step8": true,
+    "finite_and_material": true,
+    "finite_norms_and_residuals": true,
+    "mean_drop_below_0_5pp": false,
+    "mean_peak_gap_below_0_5pp": false
+  }
+}

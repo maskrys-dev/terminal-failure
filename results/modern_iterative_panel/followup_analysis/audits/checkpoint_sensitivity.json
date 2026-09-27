@@ -1,0 +1,226 @@
+{
+  "headline_checkpoint_unchanged": true,
+  "limitations": {
+    "e16_t8": "Selected and final-epoch states exist; intermediate top-three checkpoint states were not retained.",
+    "e17_t8": "Saved improving checkpoints permit a top-three audit; the final-epoch model state was not retained."
+  },
+  "models": {
+    "e16_t8": {
+      "drop_range_pp": [
+        0.5900000000000016,
+        6.130000000000003
+      ],
+      "positive_drop_for_every_audited_checkpoint": true,
+      "seed_sign_consistency": {
+        "101": true,
+        "102": true,
+        "103": true
+      },
+      "selected_drop_larger_than_every_saved_alternative": {
+        "101": true,
+        "102": true,
+        "103": true
+      }
+    },
+    "e17_t8": {
+      "drop_range_pp": [
+        2.1199999999999997,
+        3.490000000000004
+      ],
+      "positive_drop_for_every_audited_checkpoint": true,
+      "seed_sign_consistency": {
+        "101": true,
+        "102": true,
+        "103": true
+      },
+      "selected_drop_larger_than_every_saved_alternative": {
+        "101": false,
+        "102": false,
+        "103": false
+      }
+    }
+  },
+  "rows": [
+    {
+      "checkpoint_file": "results\\rebuttal_recursive_tinyimagenet_e16_ttrain8\\seed_101_checkpoint.pt",
+      "checkpoint_role": "selected",
+      "checkpoint_sha256": "07308de30628103b216c0f9156dd074b14d6ab0e922318a8cdf4b0e249dc9646",
+      "drop_pp": 4.9300000000000015,
+      "epoch": 3,
+      "model": "e16_t8",
+      "seed": 101,
+      "terminal_t32": 0.7605,
+      "terminal_t8": 0.8098,
+      "trained_horizon_validation_accuracy": 0.8096
+    },
+    {
+      "checkpoint_file": "results\\rebuttal_recursive_tinyimagenet_e16_ttrain8\\seed_101_last.pt",
+      "checkpoint_role": "final_epoch",
+      "checkpoint_sha256": "037e76c624e7945a52c67d4abae559d7160292c80bd97aa690168410cd324cf2",
+      "drop_pp": 0.5900000000000016,
+      "epoch": 30,
+      "model": "e16_t8",
+      "seed": 101,
+      "terminal_t32": 0.8012,
+      "terminal_t8": 0.8071,
+      "trained_horizon_validation_accuracy": 0.8071
+    },
+    {
+      "checkpoint_file": "results\\rebuttal_recursive_tinyimagenet_e16_ttrain8\\seed_102_checkpoint.pt",
+      "checkpoint_role": "selected",
+      "checkpoint_sha256": "1efdc2dc2e73e69dfed4ca84d6de803e78b8559cb84a7e2dc8bb33c0b98d3f85",
+      "drop_pp": 6.130000000000003,
+      "epoch": 4,
+      "model": "e16_t8",
+      "seed": 102,
+      "terminal_t32": 0.7469,
+      "terminal_t8": 0.8082,
+      "trained_horizon_validation_accuracy": 0.8084
+    },
+    {
+      "checkpoint_file": "results\\rebuttal_recursive_tinyimagenet_e16_ttrain8\\seed_102_last.pt",
+      "checkpoint_role": "final_epoch",
+      "checkpoint_sha256": "fb1fd9b822ba259e7561b55d68bf1d8a6552a7215cad4b1b1553acce34f84a92",
+      "drop_pp": 0.660000000000005,
+      "epoch": 30,
+      "model": "e16_t8",
+      "seed": 102,
+      "terminal_t32": 0.7996,
+      "terminal_t8": 0.8062,
+      "trained_horizon_validation_accuracy": 0.806
+    },
+    {
+      "checkpoint_file": "results\\rebuttal_recursive_tinyimagenet_e16_ttrain8\\seed_103_checkpoint.pt",
+      "checkpoint_role": "selected",
+      "checkpoint_sha256": "646f651d05b089de31a496b6c7c4c06b16885ca33f46f8c60965a59a8c0c2643",
+      "drop_pp": 4.270000000000007,
+      "epoch": 3,
+      "model": "e16_t8",
+      "seed": 103,
+      "terminal_t32": 0.7655,
+      "terminal_t8": 0.8082,
+      "trained_horizon_validation_accuracy": 0.8084
+    },
+    {
+      "checkpoint_file": "results\\rebuttal_recursive_tinyimagenet_e16_ttrain8\\seed_103_last.pt",
+      "checkpoint_role": "final_epoch",
+      "checkpoint_sha256": "9a455819cf55f7c8adb250dfeb8a8fc37559ec47ebb32bc715764a4326840c60",
+      "drop_pp": 0.6799999999999917,
+      "epoch": 30,
+      "model": "e16_t8",
+      "seed": 103,
+      "terminal_t32": 0.7999,
+      "terminal_t8": 0.8067,
+      "trained_horizon_validation_accuracy": 0.8064
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_101\\checkpoint_epoch_05.pt",
+      "checkpoint_role": "selected",
+      "checkpoint_sha256": "b74aaa3b4f55e3e1d4ac75fb0d99c4712e55c9f415aa93454aced7342504a99a",
+      "drop_pp": 2.7000000000000024,
+      "epoch": 5,
+      "model": "e17_t8",
+      "seed": 101,
+      "terminal_t32": 0.7683,
+      "terminal_t8": 0.7953,
+      "trained_horizon_validation_accuracy": 0.7955
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_101\\checkpoint_epoch_04.pt",
+      "checkpoint_role": "saved_rank_2",
+      "checkpoint_sha256": "9e686a45024395cff6b1c17b3129ba7e9dd1f88b6a15124bfc33d4e75e1dfb2f",
+      "drop_pp": 2.829999999999999,
+      "epoch": 4,
+      "model": "e17_t8",
+      "seed": 101,
+      "terminal_t32": 0.7608,
+      "terminal_t8": 0.7891,
+      "trained_horizon_validation_accuracy": 0.7898
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_101\\checkpoint_epoch_03.pt",
+      "checkpoint_role": "saved_rank_3",
+      "checkpoint_sha256": "ff8b9ee7e9fd45b4b397d337ed19f8941548115ed35af1e0edf0a1f6bcc97ac8",
+      "drop_pp": 3.490000000000004,
+      "epoch": 3,
+      "model": "e17_t8",
+      "seed": 101,
+      "terminal_t32": 0.7503,
+      "terminal_t8": 0.7852,
+      "trained_horizon_validation_accuracy": 0.7856
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_102\\checkpoint_epoch_07.pt",
+      "checkpoint_role": "selected",
+      "checkpoint_sha256": "77fc11fb81db845ba2a9a014afc8f5e7e265711a3ee48d9b9b6e0fdfbbc664dd",
+      "drop_pp": 2.1199999999999997,
+      "epoch": 7,
+      "model": "e17_t8",
+      "seed": 102,
+      "terminal_t32": 0.7749,
+      "terminal_t8": 0.7961,
+      "trained_horizon_validation_accuracy": 0.7961
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_102\\checkpoint_epoch_05.pt",
+      "checkpoint_role": "saved_rank_2",
+      "checkpoint_sha256": "1c4ae8c46b17cee234ab5a29569cde6597b1d4729282baae14a03b7da1b7f770",
+      "drop_pp": 2.550000000000008,
+      "epoch": 5,
+      "model": "e17_t8",
+      "seed": 102,
+      "terminal_t32": 0.7676,
+      "terminal_t8": 0.7931,
+      "trained_horizon_validation_accuracy": 0.7932
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_102\\checkpoint_epoch_04.pt",
+      "checkpoint_role": "saved_rank_3",
+      "checkpoint_sha256": "e04da6508b26421a697133b9d5b86e99c7cf2c96645ee2782d9fdf1418c21f3b",
+      "drop_pp": 2.9899999999999927,
+      "epoch": 4,
+      "model": "e17_t8",
+      "seed": 102,
+      "terminal_t32": 0.7628,
+      "terminal_t8": 0.7927,
+      "trained_horizon_validation_accuracy": 0.7925
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_103\\checkpoint_epoch_05.pt",
+      "checkpoint_role": "selected",
+      "checkpoint_sha256": "149e712c0609b60bd93fc21814cfe9e4571a14e400796e920d32d02e744b72e3",
+      "drop_pp": 2.4499999999999966,
+      "epoch": 5,
+      "model": "e17_t8",
+      "seed": 103,
+      "terminal_t32": 0.7727,
+      "terminal_t8": 0.7972,
+      "trained_horizon_validation_accuracy": 0.7971
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_103\\checkpoint_epoch_04.pt",
+      "checkpoint_role": "saved_rank_2",
+      "checkpoint_sha256": "c9466b68a748bd597f09110708f17e933d6e7ca266b582069ce395651627b8b7",
+      "drop_pp": 2.6700000000000057,
+      "epoch": 4,
+      "model": "e17_t8",
+      "seed": 103,
+      "terminal_t32": 0.7663,
+      "terminal_t8": 0.793,
+      "trained_horizon_validation_accuracy": 0.7924
+    },
+    {
+      "checkpoint_file": "results\\modern_iterative_panel\\attention_t8\\seed_103\\checkpoint_epoch_03.pt",
+      "checkpoint_role": "saved_rank_3",
+      "checkpoint_sha256": "9086afe1f6559a66930e4e1c36cc4db20c2abb988551572aaaf9c08905b40847",
+      "drop_pp": 3.3200000000000007,
+      "epoch": 3,
+      "model": "e17_t8",
+      "seed": 103,
+      "terminal_t32": 0.7506,
+      "terminal_t8": 0.7838,
+      "trained_horizon_validation_accuracy": 0.784
+    }
+  ],
+  "status": "complete"
+}

@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Checkpoint sensitivity of eight-step-trained models.} Accuracy in percent; loss in pp. Only retained checkpoints are compared.}
+\label{tab:checkpoint_sensitivity}
+\small
+\begin{tabular}{lr l rrrr}
+\toprule
+Model & Seed & Checkpoint & Epoch & Step 8 & Step 32 & Loss \\
+\midrule
+SwiGLU & 101 & Selected & 3 & 80.98 & 76.05 & 4.93 \\
+SwiGLU & 101 & Final epoch & 30 & 80.71 & 80.12 & 0.59 \\
+SwiGLU & 102 & Selected & 4 & 80.82 & 74.69 & 6.13 \\
+SwiGLU & 102 & Final epoch & 30 & 80.62 & 79.96 & 0.66 \\
+SwiGLU & 103 & Selected & 3 & 80.82 & 76.55 & 4.27 \\
+SwiGLU & 103 & Final epoch & 30 & 80.67 & 79.99 & 0.68 \\
+Attention & 101 & Selected & 5 & 79.53 & 76.83 & 2.70 \\
+Attention & 101 & Saved rank 2 & 4 & 78.91 & 76.08 & 2.83 \\
+Attention & 101 & Saved rank 3 & 3 & 78.52 & 75.03 & 3.49 \\
+Attention & 102 & Selected & 7 & 79.61 & 77.49 & 2.12 \\
+Attention & 102 & Saved rank 2 & 5 & 79.31 & 76.76 & 2.55 \\
+Attention & 102 & Saved rank 3 & 4 & 79.27 & 76.28 & 2.99 \\
+Attention & 103 & Selected & 5 & 79.72 & 77.27 & 2.45 \\
+Attention & 103 & Saved rank 2 & 4 & 79.30 & 76.63 & 2.67 \\
+Attention & 103 & Saved rank 3 & 3 & 78.38 & 75.06 & 3.32 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,28 @@
+{
+  "experiment_panel": "modern_iterative_panel",
+  "new_primary_experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+  "triggered_control": "e17c_recursive_attention_tinyimagenet_ttrain32",
+  "protocol": "results/modern_iterative_panel/protocol/PANEL_PROTOCOL.md",
+  "status": "frozen_before_e17_smoke",
+  "locked_e16": {
+    "aggregate_config_sha256": "e637a6854ac8b990d5a4822b4e7beece1b88226839b88360a86b84c89b60b605",
+    "protocol_sha256": "9cc8f8204b2fb92cb9e42c0f73ba172a3ba994264d4fe80596d35f00c30c9c28",
+    "ttrain32_config_sha256": "33a36523d381d7996f5e4f11a5d3e129f9d90542085227a3f7b8932e4c3f7bac",
+    "ttrain8_config_sha256": "6bdb5bdcc994f8e7f145042f6f2e5f5b85b0cb73c99dbeb740e13ead80084741"
+  },
+  "new_model_order": [
+    "attention_t8",
+    "attention_t32_only_if_triggered"
+  ],
+  "optional_deq": "not_before_attention_and_triggered_control_complete",
+  "forbidden": [
+    "modify_e14_e15_e16",
+    "gain_sweep",
+    "test_horizon_above_32",
+    "ssm",
+    "diffusion",
+    "new_dataset",
+    "new_grace_variant",
+    "post_result_threshold_change"
+  ]
+}

@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Full recurrent-head and readout-only benchmark.} Latencies in ms and additional peak allocations in MiB; the precomputed trajectory is part of the baseline in readout-only measurements.}
+\label{tab:cost_detail}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Readout & Full ms & Readout ms & Full MiB & Readout MiB \\
+\midrule
+Terminal & 6.727 & 0.113 & 8.00 & 2.00 \\
+Early window & 1.803 & 0.135 & 11.50 & 2.50 \\
+Adaptive & 13.840 & 0.208 & 9.01 & 2.52 \\
+Uniform streaming & 6.889 & 0.117 & 8.50 & 2.50 \\
+\grace{}, stored & 6.948 & 0.317 & 48.56 & 32.06 \\
+\grace{}, streaming & 9.681 & 3.653 & 8.51 & 3.01 \\
+\bottomrule
+\end{tabular}
+\end{table}

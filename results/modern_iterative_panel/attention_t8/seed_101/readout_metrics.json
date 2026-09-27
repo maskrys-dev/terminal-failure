@@ -1,0 +1,71 @@
+{
+  "by_horizon": {
+    "16": {
+      "accuracy": {
+        "adaptive": 0.7939,
+        "early": 0.7977,
+        "grace": 0.7747,
+        "terminal": 0.7867,
+        "uniform": 0.7933
+      },
+      "cross_entropy": {
+        "adaptive": 0.9870863943099976,
+        "early": 0.8884757169723511,
+        "grace": 1.3328440553665162,
+        "terminal": 0.9561277299880981,
+        "uniform": 0.9086473358154297
+      }
+    },
+    "24": {
+      "accuracy": {
+        "adaptive": 0.7939,
+        "early": 0.7977,
+        "grace": 0.7747,
+        "terminal": 0.7781,
+        "uniform": 0.7871
+      },
+      "cross_entropy": {
+        "adaptive": 0.9870863943099976,
+        "early": 0.8884757169723511,
+        "grace": 1.3328440553665162,
+        "terminal": 1.0475045673370362,
+        "uniform": 0.9494149122238159
+      }
+    },
+    "32": {
+      "accuracy": {
+        "adaptive": 0.7939,
+        "early": 0.7977,
+        "grace": 0.7747,
+        "terminal": 0.7685,
+        "uniform": 0.7827
+      },
+      "cross_entropy": {
+        "adaptive": 0.9870863943099976,
+        "early": 0.8884757169723511,
+        "grace": 1.3328440553665162,
+        "terminal": 1.166632724571228,
+        "uniform": 1.0010549575805665
+      }
+    },
+    "8": {
+      "accuracy": {
+        "adaptive": 0.7939,
+        "early": 0.7977,
+        "grace": 0.7747,
+        "terminal": 0.7955,
+        "uniform": 0.7977
+      },
+      "cross_entropy": {
+        "adaptive": 0.9870863943099976,
+        "early": 0.8884757169723511,
+        "grace": 1.3328440553665162,
+        "terminal": 0.8953067153930664,
+        "uniform": 0.8884757169723511
+      }
+    }
+  },
+  "config_sha256": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+  "experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+  "seed": 101
+}

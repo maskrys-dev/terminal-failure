@@ -1,0 +1,7 @@
+Readout	Full ms	Readout ms	Peak full MiB	Peak readout MiB	Stores all	Can halt
+terminal	6.727	0.113	8.00	2.00	False	False
+early	1.803	0.135	11.50	2.50	False	True
+adaptive	13.840	0.208	9.01	2.52	False	True
+uniform	6.889	0.117	8.50	2.50	False	False
+grace_naive	6.948	0.317	48.56	32.06	True	False
+grace_streaming	9.681	3.653	8.51	3.01	False	False

@@ -1,0 +1,10 @@
+{
+  "deviations": [
+    {
+      "description": "Git commit unavailable because the workspace .git directory is empty and no Git executable is available; exact protocol, config, cache, checkpoint, and source SHA-256 hashes were recorded instead.",
+      "scientific_effect": "none",
+      "type": "provenance"
+    }
+  ],
+  "status": "complete"
+}

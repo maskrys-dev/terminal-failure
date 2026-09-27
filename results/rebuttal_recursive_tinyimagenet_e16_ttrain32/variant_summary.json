@@ -1,0 +1,294 @@
+{
+  "all_finite": true,
+  "all_materially_above_chance": true,
+  "by_horizon": {
+    "16": {
+      "best_fixed_timestep_accuracy": {
+        "mean": 0.8109,
+        "sample_std": 0.001252996408614197,
+        "values": [
+          0.8122,
+          0.8097,
+          0.8108
+        ]
+      },
+      "best_fixed_timestep_values": [
+        16,
+        12,
+        16
+      ],
+      "early_eight_accuracy": {
+        "mean": 0.7971666666666667,
+        "sample_std": 0.0014468356276140795,
+        "values": [
+          0.7981,
+          0.7979,
+          0.7955
+        ]
+      },
+      "endpoint_mean_relative_update_residual": {
+        "mean": 0.02834425385631621,
+        "sample_std": 0.0002309212530679257,
+        "values": [
+          0.028084146641660482,
+          0.0284234861808829,
+          0.028525128746405243
+        ]
+      },
+      "endpoint_mean_state_norm": {
+        "mean": 15.858389351654052,
+        "sample_std": 0.06189898665407621,
+        "values": [
+          15.787974542236329,
+          15.882975997924804,
+          15.904217514801026
+        ]
+      },
+      "terminal_accuracy": {
+        "mean": 0.8106666666666666,
+        "sample_std": 0.0016041612554021157,
+        "values": [
+          0.8122,
+          0.809,
+          0.8108
+        ]
+      },
+      "terminal_deficit_to_best_fixed_pp": {
+        "mean": 0.023333333333330764,
+        "sample_std": 0.040414518843269354,
+        "values": [
+          0.0,
+          0.06999999999999229,
+          0.0
+        ]
+      },
+      "terminal_minus_early_pp": {
+        "mean": 1.3499999999999994,
+        "sample_std": 0.21633307652783862,
+        "values": [
+          1.4100000000000001,
+          1.1099999999999999,
+          1.529999999999998
+        ]
+      }
+    },
+    "24": {
+      "best_fixed_timestep_accuracy": {
+        "mean": 0.8117,
+        "sample_std": 0.0013076696830621854,
+        "values": [
+          0.8126,
+          0.8102,
+          0.8123
+        ]
+      },
+      "best_fixed_timestep_values": [
+        17,
+        24,
+        22
+      ],
+      "early_eight_accuracy": {
+        "mean": 0.7971666666666667,
+        "sample_std": 0.0014468356276140795,
+        "values": [
+          0.7981,
+          0.7979,
+          0.7955
+        ]
+      },
+      "endpoint_mean_relative_update_residual": {
+        "mean": 0.02350465610921383,
+        "sample_std": 0.00016327609064071,
+        "values": [
+          0.02331665737796575,
+          0.02358634939659387,
+          0.02361096155308187
+        ]
+      },
+      "endpoint_mean_state_norm": {
+        "mean": 18.2054070447286,
+        "sample_std": 0.10784356492251042,
+        "values": [
+          18.084085266876222,
+          18.24175735654831,
+          18.29037851076126
+        ]
+      },
+      "terminal_accuracy": {
+        "mean": 0.811,
+        "sample_std": 0.00072111025509278,
+        "values": [
+          0.8116,
+          0.8102,
+          0.8112
+        ]
+      },
+      "terminal_deficit_to_best_fixed_pp": {
+        "mean": 0.06999999999999969,
+        "sample_std": 0.060827625302981886,
+        "values": [
+          0.10000000000000009,
+          0.0,
+          0.10999999999999899
+        ]
+      },
+      "terminal_minus_early_pp": {
+        "mean": 1.3833333333333326,
+        "sample_std": 0.17243356208503816,
+        "values": [
+          1.3499999999999956,
+          1.2299999999999978,
+          1.5700000000000047
+        ]
+      }
+    },
+    "32": {
+      "best_fixed_timestep_accuracy": {
+        "mean": 0.8117,
+        "sample_std": 0.0013076696830621854,
+        "values": [
+          0.8126,
+          0.8102,
+          0.8123
+        ]
+      },
+      "best_fixed_timestep_values": [
+        17,
+        24,
+        22
+      ],
+      "early_eight_accuracy": {
+        "mean": 0.7971666666666667,
+        "sample_std": 0.0014468356276140795,
+        "values": [
+          0.7981,
+          0.7979,
+          0.7955
+        ]
+      },
+      "endpoint_mean_relative_update_residual": {
+        "mean": 0.019700877299749602,
+        "sample_std": 0.00013031158920229628,
+        "values": [
+          0.019550602781958876,
+          0.019782669425848873,
+          0.019769359691441057
+        ]
+      },
+      "endpoint_mean_state_norm": {
+        "mean": 20.664901012293498,
+        "sample_std": 0.15487683632460916,
+        "values": [
+          20.490851036453247,
+          20.716334022712708,
+          20.78751797771454
+        ]
+      },
+      "terminal_accuracy": {
+        "mean": 0.8084333333333333,
+        "sample_std": 0.0014571661996263228,
+        "values": [
+          0.8101,
+          0.8078,
+          0.8074
+        ]
+      },
+      "terminal_deficit_to_best_fixed_pp": {
+        "mean": 0.3266666666666677,
+        "sample_std": 0.14153915830374786,
+        "values": [
+          0.24999999999999467,
+          0.24000000000000687,
+          0.49000000000000155
+        ]
+      },
+      "terminal_minus_early_pp": {
+        "mean": 1.1266666666666647,
+        "sample_std": 0.1184623709594519,
+        "values": [
+          1.200000000000001,
+          0.9899999999999909,
+          1.1900000000000022
+        ]
+      }
+    },
+    "8": {
+      "best_fixed_timestep_accuracy": {
+        "mean": 0.8042666666666667,
+        "sample_std": 0.00047258156262525186,
+        "values": [
+          0.8039,
+          0.8048,
+          0.8041
+        ]
+      },
+      "best_fixed_timestep_values": [
+        8,
+        8,
+        8
+      ],
+      "early_eight_accuracy": {
+        "mean": 0.7971666666666667,
+        "sample_std": 0.0014468356276140795,
+        "values": [
+          0.7981,
+          0.7979,
+          0.7955
+        ]
+      },
+      "endpoint_mean_relative_update_residual": {
+        "mean": 0.03335639908593148,
+        "sample_std": 0.0003464117839958344,
+        "values": [
+          0.0329793647384271,
+          0.03342922291634604,
+          0.033660609603021294
+        ]
+      },
+      "endpoint_mean_state_norm": {
+        "mean": 13.835581625493367,
+        "sample_std": 0.021690957684166064,
+        "values": [
+          13.811097201824188,
+          13.852393563079834,
+          13.84325411157608
+        ]
+      },
+      "terminal_accuracy": {
+        "mean": 0.8042666666666667,
+        "sample_std": 0.00047258156262525186,
+        "values": [
+          0.8039,
+          0.8048,
+          0.8041
+        ]
+      },
+      "terminal_deficit_to_best_fixed_pp": {
+        "mean": 0.0,
+        "sample_std": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "terminal_minus_early_pp": {
+        "mean": 0.7099999999999959,
+        "sample_std": 0.14106735979666613,
+        "values": [
+          0.5799999999999916,
+          0.6899999999999906,
+          0.8600000000000052
+        ]
+      }
+    }
+  },
+  "config_sha256": "33a36523d381d7996f5e4f11a5d3e129f9d90542085227a3f7b8932e4c3f7bac",
+  "experiment": "e16_paired_inference_horizon_ttrain32",
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "training_horizon": 32
+}

@@ -1,0 +1,2 @@
+# Frozen provenance uses byte hashes; preserve original line endings on all OSes.
+* -text

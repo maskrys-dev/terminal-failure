@@ -1,0 +1,19 @@
+{
+  "classification": "matched_horizon_control",
+  "config_sha256": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+  "endpoint_invalidity_criteria": {
+    "drop_positive_every_seed": false,
+    "finite_and_material": true,
+    "mean_drop_at_least_2pp": false,
+    "mean_early_within_1pp_of_trained_terminal": true,
+    "probe_mean_directional_agreement": true
+  },
+  "experiment": "e17c_recursive_attention_tinyimagenet_ttrain32",
+  "stable_criteria": {
+    "endpoint_residual_no_greater_than_step8": true,
+    "finite_and_material": true,
+    "finite_norms_and_residuals": true,
+    "mean_drop_below_0_5pp": true,
+    "mean_peak_gap_below_0_5pp": true
+  }
+}

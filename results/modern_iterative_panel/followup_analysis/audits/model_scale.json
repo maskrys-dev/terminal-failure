@@ -1,0 +1,133 @@
+{
+  "dataset": {
+    "classes": 200,
+    "name": "Tiny ImageNet-200",
+    "training_images": 100000,
+    "validation_images": 10000
+  },
+  "flop_convention": {
+    "excludes": [
+      "frozen backbone",
+      "one-time input projection",
+      "final classifier",
+      "LayerNorm and lower-order elementwise residual/activation costs"
+    ],
+    "multiply_add": "two FLOPs"
+  },
+  "frozen_backbone": {
+    "executed_parameter_count_excluding_unused_imagenet_classifier": 27820128,
+    "full_torchvision_checkpoint_parameter_count": 28589128,
+    "name": "torchvision ConvNeXt-Tiny",
+    "unused_imagenet_classifier_parameter_count": 769000
+  },
+  "models": {
+    "attention": {
+      "attention_heads": 8,
+      "evaluated_trained_horizon_terminal_accuracy": {
+        "32": {
+          "mean": 0.7916,
+          "sample_std": 0.0022113344387495854,
+          "values": [
+            0.7933,
+            0.7924,
+            0.7891
+          ]
+        },
+        "8": {
+          "mean": 0.7962,
+          "sample_std": 0.0009539392014169512,
+          "values": [
+            0.7953,
+            0.7961,
+            0.7972
+          ]
+        }
+      },
+      "executed_system_parameters": 29122088,
+      "flop_components": {
+        "attention_projections": 26214400,
+        "attention_qk_and_av_products": 2560000,
+        "softmax_approximation": 100000,
+        "swiglu_projections": 78643200
+      },
+      "flop_formula": "8*n*d^2 + 4*n^2*d + 5*h*n^2 + 6*n*d*m",
+      "input_representation": "49 x 768 spatial tokens plus class token after projection",
+      "intermediate_width": 1024,
+      "recurrent_flops_per_step": 107517600,
+      "state_or_model_width": 256,
+      "tokens_during_recurrence": 50,
+      "trainable_head_parameters": 1301960,
+      "trained_horizon_accuracy": {
+        "32": {
+          "mean": 0.7915333333333333,
+          "sample_std": 0.002177919496522609,
+          "values": [
+            0.7933,
+            0.7922,
+            0.7891
+          ]
+        },
+        "8": {
+          "mean": 0.7962333333333333,
+          "sample_std": 0.000808290376865497,
+          "values": [
+            0.7955,
+            0.7961,
+            0.7971
+          ]
+        }
+      }
+    },
+    "swiglu": {
+      "attention_heads": null,
+      "evaluated_trained_horizon_terminal_accuracy": {
+        "32": {
+          "mean": 0.8084333333333333,
+          "sample_std": 0.0014571661996263228,
+          "values": [
+            0.8101,
+            0.8078,
+            0.8074
+          ]
+        },
+        "8": {
+          "mean": 0.8087333333333333,
+          "sample_std": 0.0009237604307033636,
+          "values": [
+            0.8098,
+            0.8082,
+            0.8082
+          ]
+        }
+      },
+      "executed_system_parameters": 31468840,
+      "flop_formula": "6*d*m with d=512 and m=2048",
+      "input_representation": "pooled 768-d",
+      "intermediate_width": 2048,
+      "recurrent_flops_per_step": 6291456,
+      "state_or_model_width": 512,
+      "trainable_head_parameters": 3648712,
+      "trained_horizon_accuracy": {
+        "32": {
+          "mean": 0.8087333333333333,
+          "sample_std": 0.0018929694486000733,
+          "values": [
+            0.8109,
+            0.8079,
+            0.8074
+          ]
+        },
+        "8": {
+          "mean": 0.8088,
+          "sample_std": 0.0006928203230275387,
+          "values": [
+            0.8096,
+            0.8084,
+            0.8084
+          ]
+        }
+      }
+    }
+  },
+  "status": "complete"
+}

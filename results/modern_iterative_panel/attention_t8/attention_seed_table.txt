@@ -1,0 +1,5 @@
+seed	terminal_T8	terminal_T32	drop_pp	early_T32	best_step	probe_drop_pp	classification
+101	0.7953	0.7683	+2.70	0.7977	4	+1.25	endpoint_invalidity
+102	0.7961	0.7749	+2.12	0.7988	5	+1.37	endpoint_invalidity
+103	0.7972	0.7727	+2.45	0.7998	4	+1.22	endpoint_invalidity
+mean+-sd	0.7962+-0.0010	0.7720+-0.0034	+2.42+-0.29	0.7988+-0.0011	4/5/4	+1.28+-0.08	endpoint_invalidity

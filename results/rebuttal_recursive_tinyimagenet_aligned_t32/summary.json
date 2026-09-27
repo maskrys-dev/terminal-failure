@@ -1,0 +1,715 @@
+{
+  "config_sha256": "48e0405e2e2ff59cfa348e3f9958b7699f1ec0f2440ac618e8f0350943f25f8f",
+  "experiment": "e15_recursive_tinyimagenet_aligned_t32",
+  "probes": {
+    "0.75": {
+      "adaptive": {
+        "mean": 0.8122,
+        "std": 0.0,
+        "values": [
+          0.8122
+        ]
+      },
+      "early": {
+        "mean": 0.8048,
+        "std": 0.0,
+        "values": [
+          0.8048
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8095,
+        "std": 0.0,
+        "values": [
+          0.8095
+        ]
+      },
+      "grace": {
+        "mean": 0.812,
+        "std": 0.0,
+        "values": [
+          0.812
+        ]
+      },
+      "terminal": {
+        "mean": 0.8129,
+        "std": 0.0,
+        "values": [
+          0.8129
+        ]
+      },
+      "uniform": {
+        "mean": 0.8118,
+        "std": 0.0,
+        "values": [
+          0.8118
+        ]
+      }
+    },
+    "1.00": {
+      "adaptive": {
+        "mean": 0.811,
+        "std": 0.0,
+        "values": [
+          0.811
+        ]
+      },
+      "early": {
+        "mean": 0.8057,
+        "std": 0.0,
+        "values": [
+          0.8057
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8115,
+        "std": 0.0,
+        "values": [
+          0.8115
+        ]
+      },
+      "grace": {
+        "mean": 0.8132,
+        "std": 0.0,
+        "values": [
+          0.8132
+        ]
+      },
+      "terminal": {
+        "mean": 0.8114,
+        "std": 0.0,
+        "values": [
+          0.8114
+        ]
+      },
+      "uniform": {
+        "mean": 0.8139,
+        "std": 0.0,
+        "values": [
+          0.8139
+        ]
+      }
+    },
+    "1.10": {
+      "adaptive": {
+        "mean": 0.8114,
+        "std": 0.0,
+        "values": [
+          0.8114
+        ]
+      },
+      "early": {
+        "mean": 0.8064,
+        "std": 0.0,
+        "values": [
+          0.8064
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.812,
+        "std": 0.0,
+        "values": [
+          0.812
+        ]
+      },
+      "grace": {
+        "mean": 0.8132,
+        "std": 0.0,
+        "values": [
+          0.8132
+        ]
+      },
+      "terminal": {
+        "mean": 0.8108,
+        "std": 0.0,
+        "values": [
+          0.8108
+        ]
+      },
+      "uniform": {
+        "mean": 0.8132,
+        "std": 0.0,
+        "values": [
+          0.8132
+        ]
+      }
+    },
+    "1.20": {
+      "adaptive": {
+        "mean": 0.811,
+        "std": 0.0,
+        "values": [
+          0.811
+        ]
+      },
+      "early": {
+        "mean": 0.8067,
+        "std": 0.0,
+        "values": [
+          0.8067
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8123,
+        "std": 0.0,
+        "values": [
+          0.8123
+        ]
+      },
+      "grace": {
+        "mean": 0.8128,
+        "std": 0.0,
+        "values": [
+          0.8128
+        ]
+      },
+      "terminal": {
+        "mean": 0.8092,
+        "std": 0.0,
+        "values": [
+          0.8092
+        ]
+      },
+      "uniform": {
+        "mean": 0.8136,
+        "std": 0.0,
+        "values": [
+          0.8136
+        ]
+      }
+    },
+    "1.30": {
+      "adaptive": {
+        "mean": 0.8101,
+        "std": 0.0,
+        "values": [
+          0.8101
+        ]
+      },
+      "early": {
+        "mean": 0.8077,
+        "std": 0.0,
+        "values": [
+          0.8077
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8125,
+        "std": 0.0,
+        "values": [
+          0.8125
+        ]
+      },
+      "grace": {
+        "mean": 0.8129,
+        "std": 0.0,
+        "values": [
+          0.8129
+        ]
+      },
+      "terminal": {
+        "mean": 0.8082,
+        "std": 0.0,
+        "values": [
+          0.8082
+        ]
+      },
+      "uniform": {
+        "mean": 0.8136,
+        "std": 0.0,
+        "values": [
+          0.8136
+        ]
+      }
+    },
+    "1.40": {
+      "adaptive": {
+        "mean": 0.8095,
+        "std": 0.0,
+        "values": [
+          0.8095
+        ]
+      },
+      "early": {
+        "mean": 0.8086,
+        "std": 0.0,
+        "values": [
+          0.8086
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8126,
+        "std": 0.0,
+        "values": [
+          0.8126
+        ]
+      },
+      "grace": {
+        "mean": 0.8132,
+        "std": 0.0,
+        "values": [
+          0.8132
+        ]
+      },
+      "terminal": {
+        "mean": 0.8079,
+        "std": 0.0,
+        "values": [
+          0.8079
+        ]
+      },
+      "uniform": {
+        "mean": 0.8122,
+        "std": 0.0,
+        "values": [
+          0.8122
+        ]
+      }
+    },
+    "1.50": {
+      "adaptive": {
+        "mean": 0.8091,
+        "std": 0.0,
+        "values": [
+          0.8091
+        ]
+      },
+      "early": {
+        "mean": 0.8098,
+        "std": 0.0,
+        "values": [
+          0.8098
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8121,
+        "std": 0.0,
+        "values": [
+          0.8121
+        ]
+      },
+      "grace": {
+        "mean": 0.8131,
+        "std": 0.0,
+        "values": [
+          0.8131
+        ]
+      },
+      "terminal": {
+        "mean": 0.807,
+        "std": 0.0,
+        "values": [
+          0.807
+        ]
+      },
+      "uniform": {
+        "mean": 0.8113,
+        "std": 0.0,
+        "values": [
+          0.8113
+        ]
+      }
+    },
+    "1.60": {
+      "adaptive": {
+        "mean": 0.8087,
+        "std": 0.0,
+        "values": [
+          0.8087
+        ]
+      },
+      "early": {
+        "mean": 0.8103,
+        "std": 0.0,
+        "values": [
+          0.8103
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8125,
+        "std": 0.0,
+        "values": [
+          0.8125
+        ]
+      },
+      "grace": {
+        "mean": 0.8127,
+        "std": 0.0,
+        "values": [
+          0.8127
+        ]
+      },
+      "terminal": {
+        "mean": 0.8069,
+        "std": 0.0,
+        "values": [
+          0.8069
+        ]
+      },
+      "uniform": {
+        "mean": 0.8115,
+        "std": 0.0,
+        "values": [
+          0.8115
+        ]
+      }
+    }
+  },
+  "seeds": [
+    0
+  ],
+  "shared_head": {
+    "0.75": {
+      "adaptive": {
+        "mean": 0.8077,
+        "std": 0.0,
+        "values": [
+          0.8077
+        ]
+      },
+      "early": {
+        "mean": 0.7925,
+        "std": 0.0,
+        "values": [
+          0.7925
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8006,
+        "std": 0.0,
+        "values": [
+          0.8006
+        ]
+      },
+      "grace": {
+        "mean": 0.805,
+        "std": 0.0,
+        "values": [
+          0.805
+        ]
+      },
+      "terminal": {
+        "mean": 0.8077,
+        "std": 0.0,
+        "values": [
+          0.8077
+        ]
+      },
+      "uniform": {
+        "mean": 0.8063,
+        "std": 0.0,
+        "values": [
+          0.8063
+        ]
+      }
+    },
+    "1.00": {
+      "adaptive": {
+        "mean": 0.8071,
+        "std": 0.0,
+        "values": [
+          0.8071
+        ]
+      },
+      "early": {
+        "mean": 0.7972,
+        "std": 0.0,
+        "values": [
+          0.7972
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8033,
+        "std": 0.0,
+        "values": [
+          0.8033
+        ]
+      },
+      "grace": {
+        "mean": 0.8064,
+        "std": 0.0,
+        "values": [
+          0.8064
+        ]
+      },
+      "terminal": {
+        "mean": 0.8075,
+        "std": 0.0,
+        "values": [
+          0.8075
+        ]
+      },
+      "uniform": {
+        "mean": 0.8085,
+        "std": 0.0,
+        "values": [
+          0.8085
+        ]
+      }
+    },
+    "1.10": {
+      "adaptive": {
+        "mean": 0.8064,
+        "std": 0.0,
+        "values": [
+          0.8064
+        ]
+      },
+      "early": {
+        "mean": 0.7977,
+        "std": 0.0,
+        "values": [
+          0.7977
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8033,
+        "std": 0.0,
+        "values": [
+          0.8033
+        ]
+      },
+      "grace": {
+        "mean": 0.8052,
+        "std": 0.0,
+        "values": [
+          0.8052
+        ]
+      },
+      "terminal": {
+        "mean": 0.8062,
+        "std": 0.0,
+        "values": [
+          0.8062
+        ]
+      },
+      "uniform": {
+        "mean": 0.8078,
+        "std": 0.0,
+        "values": [
+          0.8078
+        ]
+      }
+    },
+    "1.20": {
+      "adaptive": {
+        "mean": 0.8059,
+        "std": 0.0,
+        "values": [
+          0.8059
+        ]
+      },
+      "early": {
+        "mean": 0.7984,
+        "std": 0.0,
+        "values": [
+          0.7984
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8039,
+        "std": 0.0,
+        "values": [
+          0.8039
+        ]
+      },
+      "grace": {
+        "mean": 0.8054,
+        "std": 0.0,
+        "values": [
+          0.8054
+        ]
+      },
+      "terminal": {
+        "mean": 0.8054,
+        "std": 0.0,
+        "values": [
+          0.8054
+        ]
+      },
+      "uniform": {
+        "mean": 0.8077,
+        "std": 0.0,
+        "values": [
+          0.8077
+        ]
+      }
+    },
+    "1.30": {
+      "adaptive": {
+        "mean": 0.8057,
+        "std": 0.0,
+        "values": [
+          0.8057
+        ]
+      },
+      "early": {
+        "mean": 0.7995,
+        "std": 0.0,
+        "values": [
+          0.7995
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.804,
+        "std": 0.0,
+        "values": [
+          0.804
+        ]
+      },
+      "grace": {
+        "mean": 0.8059,
+        "std": 0.0,
+        "values": [
+          0.8059
+        ]
+      },
+      "terminal": {
+        "mean": 0.8033,
+        "std": 0.0,
+        "values": [
+          0.8033
+        ]
+      },
+      "uniform": {
+        "mean": 0.8071,
+        "std": 0.0,
+        "values": [
+          0.8071
+        ]
+      }
+    },
+    "1.40": {
+      "adaptive": {
+        "mean": 0.8043,
+        "std": 0.0,
+        "values": [
+          0.8043
+        ]
+      },
+      "early": {
+        "mean": 0.8007,
+        "std": 0.0,
+        "values": [
+          0.8007
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8051,
+        "std": 0.0,
+        "values": [
+          0.8051
+        ]
+      },
+      "grace": {
+        "mean": 0.8063,
+        "std": 0.0,
+        "values": [
+          0.8063
+        ]
+      },
+      "terminal": {
+        "mean": 0.8015,
+        "std": 0.0,
+        "values": [
+          0.8015
+        ]
+      },
+      "uniform": {
+        "mean": 0.808,
+        "std": 0.0,
+        "values": [
+          0.808
+        ]
+      }
+    },
+    "1.50": {
+      "adaptive": {
+        "mean": 0.8057,
+        "std": 0.0,
+        "values": [
+          0.8057
+        ]
+      },
+      "early": {
+        "mean": 0.8015,
+        "std": 0.0,
+        "values": [
+          0.8015
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.807,
+        "std": 0.0,
+        "values": [
+          0.807
+        ]
+      },
+      "grace": {
+        "mean": 0.8067,
+        "std": 0.0,
+        "values": [
+          0.8067
+        ]
+      },
+      "terminal": {
+        "mean": 0.8015,
+        "std": 0.0,
+        "values": [
+          0.8015
+        ]
+      },
+      "uniform": {
+        "mean": 0.8077,
+        "std": 0.0,
+        "values": [
+          0.8077
+        ]
+      }
+    },
+    "1.60": {
+      "adaptive": {
+        "mean": 0.8049,
+        "std": 0.0,
+        "values": [
+          0.8049
+        ]
+      },
+      "early": {
+        "mean": 0.802,
+        "std": 0.0,
+        "values": [
+          0.802
+        ]
+      },
+      "fixed_profile": {
+        "mean": 0.8068,
+        "std": 0.0,
+        "values": [
+          0.8068
+        ]
+      },
+      "grace": {
+        "mean": 0.8066,
+        "std": 0.0,
+        "values": [
+          0.8066
+        ]
+      },
+      "terminal": {
+        "mean": 0.7993,
+        "std": 0.0,
+        "values": [
+          0.7993
+        ]
+      },
+      "uniform": {
+        "mean": 0.8079,
+        "std": 0.0,
+        "values": [
+          0.8079
+        ]
+      }
+    }
+  }
+}

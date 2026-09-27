@@ -1,0 +1,122 @@
+{
+  "all_states_and_logits_finite": true,
+  "comparison_policy": "shared_head_only",
+  "config_sha256": "48e0405e2e2ff59cfa348e3f9958b7699f1ec0f2440ac618e8f0350943f25f8f",
+  "continue_to_seeds_1_and_2": false,
+  "experiment": "e15_recursive_tinyimagenet_aligned_t32",
+  "minimum_material_accuracy": 0.025,
+  "probe_gate": {
+    "comparison": "probes",
+    "consecutive_gain_pass": false,
+    "early_minus_terminal": {
+      "0.75": -0.008099999999999996,
+      "1.00": -0.005700000000000038,
+      "1.10": -0.0043999999999999595,
+      "1.20": -0.0025000000000000577,
+      "1.30": -0.000500000000000056,
+      "1.40": 0.0007000000000000339,
+      "1.50": 0.0027999999999999137,
+      "1.60": 0.0034000000000000696
+    },
+    "minimum_gain_for_sequence": 1.2,
+    "pass": false,
+    "passing_consecutive_gains": [],
+    "stable_pass": true,
+    "stable_terminal_deficit": 0.0024999999999999467
+  },
+  "seed": 0,
+  "selected_comparison": null,
+  "shared_head_gate": {
+    "comparison": "shared_head",
+    "consecutive_gain_pass": false,
+    "early_minus_terminal": {
+      "0.75": -0.015199999999999991,
+      "1.00": -0.010299999999999976,
+      "1.10": -0.008500000000000063,
+      "1.20": -0.007000000000000006,
+      "1.30": -0.0038000000000000256,
+      "1.40": -0.0008000000000000229,
+      "1.50": 0.0,
+      "1.60": 0.0027000000000000357
+    },
+    "minimum_gain_for_sequence": 1.2,
+    "pass": false,
+    "passing_consecutive_gains": [],
+    "stable_pass": true,
+    "stable_terminal_deficit": 0.0010000000000000009
+  },
+  "stressed_classification_above_random": true,
+  "trajectory_structure": {
+    "aligned_horizon_stress_rule": {
+      "best_timestep_shifts_earlier": true,
+      "first_best_timestep": 16,
+      "first_early_minus_terminal": -0.007000000000000006,
+      "first_gain": 1.2,
+      "gap_increases": true,
+      "last_best_timestep": 12,
+      "last_early_minus_terminal": 0.0027000000000000357,
+      "last_gain": 1.6,
+      "minimum_gain": 1.2
+    },
+    "grace_period_shortening": {
+      "0.40": {
+        "pass": false,
+        "stable": 32,
+        "stressed": 32
+      },
+      "0.50": {
+        "pass": false,
+        "stable": 32,
+        "stressed": 32
+      },
+      "0.60": {
+        "pass": false,
+        "stable": 32,
+        "stressed": 32
+      }
+    },
+    "pass": true,
+    "shared_nonmonotonic": {
+      "0.75": {
+        "pass": false,
+        "peak_minus_terminal": 0.0012000000000000899,
+        "peak_timestep": 24
+      },
+      "1.00": {
+        "pass": false,
+        "peak_minus_terminal": 0.0014999999999999458,
+        "peak_timestep": 18
+      },
+      "1.10": {
+        "pass": false,
+        "peak_minus_terminal": 0.0021999999999999797,
+        "peak_timestep": 17
+      },
+      "1.20": {
+        "pass": false,
+        "peak_minus_terminal": 0.0030999999999999917,
+        "peak_timestep": 16
+      },
+      "1.30": {
+        "pass": false,
+        "peak_minus_terminal": 0.005199999999999982,
+        "peak_timestep": 15
+      },
+      "1.40": {
+        "pass": false,
+        "peak_minus_terminal": 0.007199999999999984,
+        "peak_timestep": 13
+      },
+      "1.50": {
+        "pass": false,
+        "peak_minus_terminal": 0.00759999999999994,
+        "peak_timestep": 13
+      },
+      "1.60": {
+        "pass": false,
+        "peak_minus_terminal": 0.008499999999999952,
+        "peak_timestep": 12
+      }
+    }
+  }
+}

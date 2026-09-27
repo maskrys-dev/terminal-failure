@@ -1,0 +1,59 @@
+{
+  "all_finite": true,
+  "by_horizon": {
+    "16": {
+      "best_fixed_timestep": 4,
+      "best_fixed_timestep_accuracy": 0.7989,
+      "early_accuracy": 0.7977,
+      "endpoint_mean_class_token_norm": 11.496102333450317,
+      "endpoint_mean_relative_update_residual": 0.0709033998593688,
+      "peak_minus_terminal_pp": 1.200000000000001,
+      "terminal_accuracy": 0.7869,
+      "terminal_minus_early_pp": -1.079999999999992
+    },
+    "24": {
+      "best_fixed_timestep": 4,
+      "best_fixed_timestep_accuracy": 0.7989,
+      "early_accuracy": 0.7977,
+      "endpoint_mean_class_token_norm": 17.05241068658829,
+      "endpoint_mean_relative_update_residual": 0.04732548426352441,
+      "peak_minus_terminal_pp": 2.1200000000000108,
+      "terminal_accuracy": 0.7777,
+      "terminal_minus_early_pp": -2.0000000000000018
+    },
+    "32": {
+      "best_fixed_timestep": 4,
+      "best_fixed_timestep_accuracy": 0.7989,
+      "early_accuracy": 0.7977,
+      "endpoint_mean_class_token_norm": 22.50924003019333,
+      "endpoint_mean_relative_update_residual": 0.03590848976373672,
+      "peak_minus_terminal_pp": 3.060000000000007,
+      "terminal_accuracy": 0.7683,
+      "terminal_minus_early_pp": -2.939999999999998
+    },
+    "8": {
+      "best_fixed_timestep": 4,
+      "best_fixed_timestep_accuracy": 0.7989,
+      "early_accuracy": 0.7977,
+      "endpoint_mean_class_token_norm": 5.757132611465454,
+      "endpoint_mean_relative_update_residual": 0.15273074946403503,
+      "peak_minus_terminal_pp": 0.36000000000000476,
+      "terminal_accuracy": 0.7953,
+      "terminal_minus_early_pp": -0.23999999999999577
+    }
+  },
+  "cache_metadata_sha256": "fa95e6ae964995e91691e831abb40b7bdb957f34139cc24728fe7851c0aa05cb",
+  "cache_validation_features_sha256": "02cd979c4eb6dc1eb649fbb850897d4e07b02c7049bbdf89a807b1c703ad6744",
+  "config_sha256": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+  "experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+  "materially_above_chance": true,
+  "minimum_terminal_or_early_accuracy": 0.7683,
+  "nonfinite_counts": {
+    "nonfinite_class_state_values": 0,
+    "nonfinite_readout_logit_values": 0,
+    "nonfinite_timestep_logit_values": 0,
+    "nonfinite_token_state_values": 0
+  },
+  "seed": 101,
+  "source_sha256": "c3a6f8c12625cc98ddd76466067ee1859011894f36dd1d7ebb901a66a33a823f"
+}

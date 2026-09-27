@@ -1,0 +1,73 @@
+{
+  "cache_metadata_sha256": "fa95e6ae964995e91691e831abb40b7bdb957f34139cc24728fe7851c0aa05cb",
+  "checks": {
+    "all_readouts_execute": true,
+    "finite_through_32_steps": true,
+    "full_trajectory_logging": true,
+    "loss_decreased": true,
+    "no_scientific_trajectory_used_for_tuning": true,
+    "peak_cuda_allocated_at_most_14_gib": true,
+    "validation_accuracy_strictly_above_10_percent": true
+  },
+  "config_sha256": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+  "experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+  "nonfinite_counts": {
+    "nonfinite_class_state_values": 0,
+    "nonfinite_logit_values": 0,
+    "nonfinite_readout_logit_values": 0,
+    "nonfinite_token_state_values": 0
+  },
+  "pass": true,
+  "readouts_executed": [
+    "adaptive",
+    "early",
+    "grace",
+    "terminal",
+    "uniform"
+  ],
+  "source_sha256": "c3a6f8c12625cc98ddd76466067ee1859011894f36dd1d7ebb901a66a33a823f",
+  "training": {
+    "best_epoch": 3,
+    "best_validation_terminal_accuracy": 0.168,
+    "elapsed_seconds": 3.1628506183624268,
+    "epochs": 3,
+    "history": [
+      {
+        "elapsed_seconds": 1.535670518875122,
+        "epoch": 1,
+        "learning_rate": 0.00016874999999999998,
+        "training_accuracy": 0.00675,
+        "training_loss": 5.407972663879394,
+        "validation_loss": 5.275089996337891,
+        "validation_terminal_accuracy": 0.013
+      },
+      {
+        "elapsed_seconds": 2.3460450172424316,
+        "epoch": 2,
+        "learning_rate": 0.0003,
+        "training_accuracy": 0.0245,
+        "training_loss": 5.183176963806153,
+        "validation_loss": 4.905063491821289,
+        "validation_terminal_accuracy": 0.085
+      },
+      {
+        "elapsed_seconds": 3.1628506183624268,
+        "epoch": 3,
+        "learning_rate": 0.0,
+        "training_accuracy": 0.16675,
+        "training_loss": 4.642045082092285,
+        "validation_loss": 4.442808868408203,
+        "validation_terminal_accuracy": 0.168
+      }
+    ],
+    "peak_cuda_allocated_bytes": 913900544,
+    "peak_cuda_reserved_bytes": 1151336448,
+    "seed": 0,
+    "selected_checkpoint_source": null
+  },
+  "trajectory_examples": 2000,
+  "trajectory_shape_per_example": [
+    32,
+    256
+  ]
+}

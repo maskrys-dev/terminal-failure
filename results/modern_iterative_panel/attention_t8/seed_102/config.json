@@ -1,0 +1,180 @@
+{
+  "experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+  "status": "frozen_before_engineering_smoke",
+  "protocol": "results/modern_iterative_panel/protocol/PANEL_PROTOCOL.md",
+  "output_directory": "results/modern_iterative_panel/attention_t8",
+  "dataset": {
+    "name": "Tiny ImageNet-200",
+    "root": "data/tiny-imagenet-200",
+    "train_examples": 100000,
+    "validation_examples": 10000,
+    "classes": 200,
+    "train_per_class": 500,
+    "validation_per_class": 50,
+    "split": "standard train and labelled validation",
+    "augmentation": false
+  },
+  "backbone": {
+    "name": "torchvision.models.convnext_tiny",
+    "weights": "ConvNeXt_Tiny_Weights.DEFAULT",
+    "frozen": true,
+    "preprocessing": "ConvNeXt_Tiny_Weights.DEFAULT.transforms()",
+    "spatial_source": "model.features followed by frozen model.classifier[0] LayerNorm2d",
+    "expected_channels": 768,
+    "expected_height": 7,
+    "expected_width": 7,
+    "tokens": 49,
+    "extraction_batch_size": 128,
+    "extraction_precision": "BF16_if_supported_else_FP16",
+    "cache_dtype": "float16",
+    "dataset_standardisation": false,
+    "minimum_free_disk_gib": 20.0,
+    "cache_directory": "results/modern_iterative_panel/spatial_cache"
+  },
+  "token_preparation": {
+    "input_dimension": 768,
+    "model_dimension": 256,
+    "projection_bias": true,
+    "class_token": "learned",
+    "class_token_initialisation": "truncated_normal_std_0.02",
+    "class_positional_embedding": "fixed_zero",
+    "spatial_positional_embedding": "fixed_2d_sine_cosine",
+    "position_grid": [
+      7,
+      7
+    ],
+    "position_frequency_base": 10000.0,
+    "position_channels_per_sine_or_cosine_component": 64,
+    "position_application": "once_before_first_recurrent_step"
+  },
+  "architecture": {
+    "family": "weight_tied_universal_transformer_style_recursive_attention",
+    "training_horizon": 8,
+    "training_gain": 1.0,
+    "residual_scale": "lambda / training_horizon",
+    "model_dimension": 256,
+    "attention_heads": 8,
+    "attention_head_dimension": 32,
+    "attention_implementation": "torch.nn.MultiheadAttention_batch_first",
+    "attention_probability_dropout": 0.1,
+    "attention_output_dropout": 0.1,
+    "swiglu_width": 1024,
+    "swiglu_output_dropout": 0.1,
+    "normalisation": "pre_norm_LayerNorm",
+    "layer_norm_epsilon": 1e-05,
+    "weight_tied": true,
+    "attention_mask": null,
+    "causal_mask": false,
+    "input_reinjection": false,
+    "shared_classifier": "LayerNorm_then_Linear_200",
+    "intermediate_supervision": false
+  },
+  "training": {
+    "objective": "terminal_cross_entropy_only",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "epochs": 30,
+    "warmup_epochs": 2,
+    "schedule": "linear_warmup_then_cosine_decay",
+    "label_smoothing": 0.1,
+    "gradient_clip_norm": 1.0,
+    "physical_batch_size": 128,
+    "gradient_accumulation_steps": 4,
+    "nominal_effective_batch_size": 512,
+    "retain_final_partial_accumulation_group": true,
+    "seeds": [
+      101,
+      102,
+      103
+    ],
+    "precision": "BF16_if_supported_else_FP16",
+    "checkpoint_selection": "earliest_maximum_terminal_validation_accuracy_at_T8_lambda1"
+  },
+  "evaluation": {
+    "gain": 1.0,
+    "test_horizons": [
+      8,
+      16,
+      24,
+      32
+    ],
+    "maximum_horizon": 32,
+    "early_window": 8,
+    "random_chance_accuracy": 0.005,
+    "minimum_material_accuracy": 0.025,
+    "best_timestep_tie_break": "earliest"
+  },
+  "readouts": {
+    "state": "class_token",
+    "terminal": true,
+    "early_window": true,
+    "uniform": true,
+    "adaptive": {
+      "norm_ratio_threshold": 1.5,
+      "fallback": "terminal"
+    },
+    "grace": {
+      "norm_ratio_threshold": 1.2,
+      "alpha": 10.0,
+      "normalisation": "per_sample_over_available_prefix"
+    }
+  },
+  "probes": {
+    "classifier": "sklearn.linear_model.RidgeClassifier",
+    "alpha": 1.0,
+    "standardisation": false,
+    "training_subset_indices": "results/rebuttal_recursive_tinyimagenet/probe_subset_indices.npy",
+    "training_subset_sha256": "9f7378e1c3cde52953ea5096b6b80cfb4b52fff8cafcd87be19d9b366590a19d",
+    "training_subset_size": 20000,
+    "validation_subset": "full",
+    "representations": [
+      "terminal_step8",
+      "early_mean_steps1_to_8",
+      "terminal_step32"
+    ],
+    "directional_agreement": "across_seed_mean_step8_terminal_probe_accuracy_strictly_greater_than_step32"
+  },
+  "smoke_test": {
+    "training_examples": 4000,
+    "validation_examples": 2000,
+    "subset_seed": 2026,
+    "training_seed": 0,
+    "epochs": 3,
+    "minimum_validation_accuracy_exclusive": 0.1,
+    "maximum_peak_cuda_allocated_gib": 14.0,
+    "require_loss_decrease": true,
+    "require_finite_trajectory_through_step": 32,
+    "require_all_readouts": true
+  },
+  "classification": {
+    "endpoint_invalidity": {
+      "minimum_mean_terminal_drop_pp": 2.0,
+      "require_positive_terminal_drop_every_seed": true,
+      "maximum_absolute_mean_early_to_trained_terminal_difference_pp": 1.0,
+      "require_all_finite": true,
+      "minimum_material_accuracy": 0.025,
+      "require_probe_mean_directional_agreement": true
+    },
+    "stable": {
+      "maximum_mean_terminal_drop_pp_exclusive": 0.5,
+      "maximum_mean_peak_minus_terminal_pp_exclusive": 0.5,
+      "require_finite_norms_and_residuals": true,
+      "require_mean_endpoint_residual_no_greater_than_step8": true,
+      "require_all_finite": true,
+      "minimum_material_accuracy": 0.025
+    },
+    "otherwise": "ambiguous"
+  },
+  "matched_control_trigger": {
+    "minimum_mean_terminal_drop_pp": 2.0,
+    "require_positive_terminal_drop_every_seed": true,
+    "maximum_absolute_mean_early_to_trained_terminal_difference_pp": 1.0,
+    "does_not_depend_on_probes": true
+  },
+  "runtime": {
+    "record_training_wall_time": true,
+    "record_peak_cuda_allocated": true,
+    "record_peak_cuda_reserved": true
+  }
+}

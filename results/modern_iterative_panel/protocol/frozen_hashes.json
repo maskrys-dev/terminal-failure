@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-07-23T22:49:24.2952128+01:00",
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "attention_t32_control_config.json": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+    "attention_t8_config.json": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+    "panel_config.json": "2a4322cf44f61353a565bd9be9d3df4622958e1f898f6a52214a71c838d62f36",
+    "PANEL_PROTOCOL.md": "d626081b7c81396fbf00377a37eedbc6bcce5096083345f898c92dc42ae19e42",
+    "seeds.json": "6dd3ddd3f57f5b9b919341dcd88b6ef01b81fb1cdbc147a0607618693a115ca4"
+  },
+  "governing_plan_sha256": "9c55b956c4fcd4cbcc443ca60985201c44ae9064b743f03479a516074378ffb6",
+  "status": "frozen_before_e17_smoke_or_scientific_output"
+}

@@ -1,0 +1,10 @@
+{
+  "best_epoch": 7,
+  "best_validation_terminal_accuracy": 0.7922,
+  "checkpoint_sha256": "3adfa02757b60420ad10cde343ed61f27c3a92266ea41aada73dac89d3641469",
+  "config_sha256": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+  "final_checkpoint": "checkpoint.pt",
+  "seed": 102,
+  "selection_rule": "earliest_maximum_terminal_validation_accuracy_at_T32_lambda1",
+  "source_checkpoint": "checkpoint_epoch_07.pt"
+}

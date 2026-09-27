@@ -1,0 +1,11 @@
+{
+  "config_sha256": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+  "evaluation_peak_cuda_allocated_bytes": 230193152,
+  "evaluation_peak_cuda_reserved_bytes": 312475648,
+  "evaluation_wall_seconds": 4.822443246841431,
+  "experiment": "e17c_recursive_attention_tinyimagenet_ttrain32",
+  "seed": 102,
+  "training_peak_cuda_allocated_bytes": 3203302400,
+  "training_peak_cuda_reserved_bytes": 3768582144,
+  "training_wall_seconds": 1635.7620553970337
+}

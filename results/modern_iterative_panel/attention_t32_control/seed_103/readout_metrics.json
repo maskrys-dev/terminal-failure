@@ -1,0 +1,71 @@
+{
+  "by_horizon": {
+    "16": {
+      "accuracy": {
+        "adaptive": 0.7644,
+        "early": 0.7836,
+        "grace": 0.545,
+        "terminal": 0.7917,
+        "uniform": 0.7927
+      },
+      "cross_entropy": {
+        "adaptive": 1.5529197164535522,
+        "early": 1.1109068218231202,
+        "grace": 3.2043957683563233,
+        "terminal": 0.9507012489318848,
+        "uniform": 0.9623355527877807
+      }
+    },
+    "24": {
+      "accuracy": {
+        "adaptive": 0.7644,
+        "early": 0.7836,
+        "grace": 0.545,
+        "terminal": 0.7889,
+        "uniform": 0.7915
+      },
+      "cross_entropy": {
+        "adaptive": 1.5529197164535522,
+        "early": 1.1109068218231202,
+        "grace": 3.2043957683563233,
+        "terminal": 0.9638672423362732,
+        "uniform": 0.9500908084869385
+      }
+    },
+    "32": {
+      "accuracy": {
+        "adaptive": 0.7644,
+        "early": 0.7836,
+        "grace": 0.545,
+        "terminal": 0.7891,
+        "uniform": 0.7913
+      },
+      "cross_entropy": {
+        "adaptive": 1.5529197164535522,
+        "early": 1.1109068218231202,
+        "grace": 3.2043957683563233,
+        "terminal": 0.9816136058807373,
+        "uniform": 0.9556155756950379
+      }
+    },
+    "8": {
+      "accuracy": {
+        "adaptive": 0.7644,
+        "early": 0.7836,
+        "grace": 0.545,
+        "terminal": 0.7908,
+        "uniform": 0.7836
+      },
+      "cross_entropy": {
+        "adaptive": 1.5529197164535522,
+        "early": 1.1109068218231202,
+        "grace": 3.2043957683563233,
+        "terminal": 0.9916231731414795,
+        "uniform": 1.1109068218231202
+      }
+    }
+  },
+  "config_sha256": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+  "experiment": "e17c_recursive_attention_tinyimagenet_ttrain32",
+  "seed": 103
+}

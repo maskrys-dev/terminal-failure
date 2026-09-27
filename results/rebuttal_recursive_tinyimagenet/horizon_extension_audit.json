@@ -1,0 +1,69 @@
+{
+  "experiment": "e14_horizon_extension_seed0",
+  "source_config_sha256": "093e28a08fbc0d90f666bea8d0107b8881da2f2a448a1f2cd200647e4a9a316e",
+  "seed": 0,
+  "training_horizon": 8,
+  "training_gain": 1.0,
+  "test_gain": 1.0,
+  "test_horizons": [
+    8,
+    12,
+    16,
+    24,
+    32
+  ],
+  "checkpoint_selected_terminal_accuracy_T8": 0.8079,
+  "rows": [
+    {
+      "test_horizon": 8,
+      "shared_head_terminal_accuracy": 0.8082,
+      "shared_head_change_from_T8_pp": 0.0,
+      "fixed_probe_terminal_accuracy": 0.8122,
+      "fixed_probe_change_from_T8_pp": 0.0,
+      "cross_entropy": 0.8374920219794382,
+      "mean_state_norm": 20.506370776081084,
+      "mean_relative_update_residual": 0.08192102370820939
+    },
+    {
+      "test_horizon": 12,
+      "shared_head_terminal_accuracy": 0.8013,
+      "shared_head_change_from_T8_pp": -0.6900000000000017,
+      "fixed_probe_terminal_accuracy": 0.8071,
+      "fixed_probe_change_from_T8_pp": -0.5099999999999993,
+      "cross_entropy": 0.8716976101874141,
+      "mean_state_norm": 25.27132814903259,
+      "mean_relative_update_residual": 0.059473003329336645
+    },
+    {
+      "test_horizon": 16,
+      "shared_head_terminal_accuracy": 0.793,
+      "shared_head_change_from_T8_pp": -1.5199999999999991,
+      "fixed_probe_terminal_accuracy": 0.8065,
+      "fixed_probe_change_from_T8_pp": -0.5700000000000038,
+      "cross_entropy": 0.9297549759568879,
+      "mean_state_norm": 29.861323744678497,
+      "mean_relative_update_residual": 0.046423732544481754
+    },
+    {
+      "test_horizon": 24,
+      "shared_head_terminal_accuracy": 0.7783,
+      "shared_head_change_from_T8_pp": -2.9900000000000038,
+      "fixed_probe_terminal_accuracy": 0.799,
+      "fixed_probe_change_from_T8_pp": -1.319999999999999,
+      "cross_entropy": 1.0696550879809075,
+      "mean_state_norm": 38.54937137851715,
+      "mean_relative_update_residual": 0.03251462005786598
+    },
+    {
+      "test_horizon": 32,
+      "shared_head_terminal_accuracy": 0.7592,
+      "shared_head_change_from_T8_pp": -4.900000000000004,
+      "fixed_probe_terminal_accuracy": 0.7933,
+      "fixed_probe_change_from_T8_pp": -1.8900000000000028,
+      "cross_entropy": 1.22234993286517,
+      "mean_state_norm": 46.78744177436828,
+      "mean_relative_update_residual": 0.0253348266961053
+    }
+  ],
+  "interpretation": "At fixed gain 1.0, extending recurrence beyond the trained horizon degrades both shared-head terminal accuracy and fixed-probe accuracy."
+}

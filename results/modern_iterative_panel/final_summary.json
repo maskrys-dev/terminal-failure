@@ -1,0 +1,204 @@
+{
+  "attention_classification": "endpoint_invalidity",
+  "attention_t32_trigger": {
+    "checks": {
+      "mean_early_within_1pp_of_trained_terminal": true,
+      "mean_terminal_drop_at_least_2pp": true,
+      "terminal_drop_positive_every_seed": true
+    },
+    "config_sha256": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+    "evaluated_after_all_three_seeds": true,
+    "experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+    "probe_independent": true,
+    "run_t32_control": true
+  },
+  "frozen_hashes": {
+    "files": {
+      "PANEL_PROTOCOL.md": "d626081b7c81396fbf00377a37eedbc6bcce5096083345f898c92dc42ae19e42",
+      "attention_t32_control_config.json": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+      "attention_t8_config.json": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+      "panel_config.json": "2a4322cf44f61353a565bd9be9d3df4622958e1f898f6a52214a71c838d62f36",
+      "seeds.json": "6dd3ddd3f57f5b9b919341dcd88b6ef01b81fb1cdbc147a0607618693a115ca4"
+    },
+    "frozen_at": "2026-07-23T22:49:24.2952128+01:00",
+    "governing_plan_sha256": "9c55b956c4fcd4cbcc443ca60985201c44ae9064b743f03479a516074378ffb6",
+    "hash_algorithm": "SHA-256",
+    "status": "frozen_before_e17_smoke_or_scientific_output"
+  },
+  "locked_e16_unchanged": true,
+  "models": [
+    {
+      "best_step_t32_values": [
+        4,
+        4,
+        5
+      ],
+      "classification": "endpoint_invalidity",
+      "early_t32": {
+        "mean": 0.8122333333333334,
+        "sample_std": 0.0004725815626252714,
+        "values": [
+          0.8124,
+          0.8126,
+          0.8117
+        ]
+      },
+      "family": "residual_recursive",
+      "model_condition": "SwiGLU T_train=8",
+      "terminal_t32": {
+        "mean": 0.7576333333333333,
+        "sample_std": 0.009625660150521251,
+        "values": [
+          0.7605,
+          0.7469,
+          0.7655
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.8087333333333333,
+        "sample_std": 0.0009237604307033636,
+        "values": [
+          0.8098,
+          0.8082,
+          0.8082
+        ]
+      },
+      "training_horizon": 8
+    },
+    {
+      "best_step_t32_values": [
+        17,
+        24,
+        22
+      ],
+      "classification": "matched_horizon_control",
+      "early_t32": {
+        "mean": 0.7971666666666667,
+        "sample_std": 0.0014468356276140795,
+        "values": [
+          0.7981,
+          0.7979,
+          0.7955
+        ]
+      },
+      "family": "residual_recursive",
+      "model_condition": "SwiGLU T_train=32",
+      "terminal_t32": {
+        "mean": 0.8084333333333333,
+        "sample_std": 0.0014571661996263228,
+        "values": [
+          0.8101,
+          0.8078,
+          0.8074
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.8042666666666667,
+        "sample_std": 0.00047258156262525186,
+        "values": [
+          0.8039,
+          0.8048,
+          0.8041
+        ]
+      },
+      "training_horizon": 32
+    },
+    {
+      "best_step_t32_values": [
+        4,
+        5,
+        4
+      ],
+      "classification": "endpoint_invalidity",
+      "early_t32": {
+        "mean": 0.7987666666666666,
+        "sample_std": 0.001050396750439244,
+        "values": [
+          0.7977,
+          0.7988,
+          0.7998
+        ]
+      },
+      "family": "recursive_attention",
+      "model_condition": "Attention T_train=8",
+      "terminal_t32": {
+        "mean": 0.7719666666666667,
+        "sample_std": 0.0032715949219506877,
+        "values": [
+          0.7685,
+          0.775,
+          0.7724
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.7962333333333333,
+        "sample_std": 0.000808290376865497,
+        "values": [
+          0.7955,
+          0.7961,
+          0.7971
+        ]
+      },
+      "training_horizon": 8
+    },
+    {
+      "best_step_t32_values": [
+        23,
+        14,
+        12
+      ],
+      "classification": "matched_horizon_control",
+      "early_t32": {
+        "mean": 0.7857666666666666,
+        "sample_std": 0.0029297326385411917,
+        "values": [
+          0.7846,
+          0.7891,
+          0.7836
+        ]
+      },
+      "family": "recursive_attention",
+      "model_condition": "Attention T_train=32",
+      "terminal_t32": {
+        "mean": 0.7915333333333333,
+        "sample_std": 0.002177919496522609,
+        "values": [
+          0.7933,
+          0.7922,
+          0.7891
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.7919,
+        "sample_std": 0.0011000000000000454,
+        "values": [
+          0.7919,
+          0.793,
+          0.7908
+        ]
+      },
+      "training_horizon": 32
+    }
+  ],
+  "panel": "modern_iterative_panel",
+  "phases": {
+    "attention_protocol_and_configs": "complete_frozen_before_smoke",
+    "attention_t32_trigger": "passed_and_control_complete",
+    "attention_t8_engineering_gate": "complete_pass",
+    "attention_t8_probe_and_classification": "complete",
+    "attention_t8_scientific_seeds": "complete_101_102_103",
+    "locked_e14_e15_e16_audit": "complete_pass",
+    "optional_deq": "skipped_optional_conditions_not_verified",
+    "panel_aggregation": "complete",
+    "spatial_feature_cache": "complete_validated"
+  },
+  "protocol_deviations": [
+    {
+      "description": "Git commit unavailable because the workspace .git directory is empty and no Git executable is available; exact protocol, config, cache, checkpoint, and source SHA-256 hashes were recorded instead.",
+      "scientific_effect": "none",
+      "type": "provenance"
+    }
+  ],
+  "source_sha256": "c3a6f8c12625cc98ddd76466067ee1859011894f36dd1d7ebb901a66a33a823f",
+  "status": "complete"
+}

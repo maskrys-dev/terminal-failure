@@ -1,0 +1,428 @@
+{
+  "absolute_mean_early_t32_to_terminal_t8_pp": 0.6266666666666754,
+  "all_finite_and_material": true,
+  "classification": "matched_horizon_control",
+  "config_sha256": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+  "endpoint_invalidity_criteria": {
+    "drop_positive_every_seed": false,
+    "finite_and_material": true,
+    "mean_drop_at_least_2pp": false,
+    "mean_early_within_1pp_of_trained_terminal": true,
+    "probe_mean_directional_agreement": true
+  },
+  "experiment": "e17c_recursive_attention_tinyimagenet_ttrain32",
+  "gain": 1.0,
+  "mean_residual_step32": 0.03477533596946548,
+  "mean_residual_step8": 0.180568300332129,
+  "probe_terminal_drop_pp": {
+    "mean": 0.35000000000000214,
+    "sample_std": 0.10440306508910677,
+    "values": [
+      0.28000000000000247,
+      0.47000000000000375,
+      0.30000000000000027
+    ]
+  },
+  "seed_level": [
+    {
+      "absolute_early_t32_to_terminal_t8_pp": 0.7199999999999984,
+      "all_finite": true,
+      "best_epoch": 5,
+      "best_step_accuracy_t32": 0.796,
+      "best_step_t32": 23,
+      "early_t32": 0.7846,
+      "materially_above_chance": true,
+      "peak_minus_terminal_t32_pp": 0.27000000000000357,
+      "probe_drop_pp": 0.28000000000000247,
+      "probe_terminal_t32": 0.7916,
+      "probe_terminal_t8": 0.7944,
+      "seed": 101,
+      "terminal_drop_pp": -0.15000000000000568,
+      "terminal_t32": 0.7933,
+      "terminal_t8": 0.7918
+    },
+    {
+      "absolute_early_t32_to_terminal_t8_pp": 0.42999999999999705,
+      "all_finite": true,
+      "best_epoch": 7,
+      "best_step_accuracy_t32": 0.796,
+      "best_step_t32": 14,
+      "early_t32": 0.7891,
+      "materially_above_chance": true,
+      "peak_minus_terminal_t32_pp": 0.36000000000000476,
+      "probe_drop_pp": 0.47000000000000375,
+      "probe_terminal_t32": 0.7915,
+      "probe_terminal_t8": 0.7962,
+      "seed": 102,
+      "terminal_drop_pp": 0.10000000000000009,
+      "terminal_t32": 0.7924,
+      "terminal_t8": 0.7934
+    },
+    {
+      "absolute_early_t32_to_terminal_t8_pp": 0.7300000000000084,
+      "all_finite": true,
+      "best_epoch": 7,
+      "best_step_accuracy_t32": 0.7925,
+      "best_step_t32": 12,
+      "early_t32": 0.7836,
+      "materially_above_chance": true,
+      "peak_minus_terminal_t32_pp": 0.33999999999999586,
+      "probe_drop_pp": 0.30000000000000027,
+      "probe_terminal_t32": 0.7864,
+      "probe_terminal_t8": 0.7894,
+      "seed": 103,
+      "terminal_drop_pp": 0.18000000000000238,
+      "terminal_t32": 0.7891,
+      "terminal_t8": 0.7909
+    }
+  ],
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "source_sha256": "c3a6f8c12625cc98ddd76466067ee1859011894f36dd1d7ebb901a66a33a823f",
+  "stable_criteria": {
+    "endpoint_residual_no_greater_than_step8": true,
+    "finite_and_material": true,
+    "finite_norms_and_residuals": true,
+    "mean_drop_below_0_5pp": true,
+    "mean_peak_gap_below_0_5pp": true
+  },
+  "status": "complete",
+  "terminal_drop_pp": {
+    "mean": 0.04333333333333226,
+    "sample_std": 0.17214335111567558,
+    "values": [
+      -0.15000000000000568,
+      0.10000000000000009,
+      0.18000000000000238
+    ]
+  },
+  "test_horizons": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "training_horizon": 32,
+  "trajectory_summary": {
+    "16": {
+      "adaptive": {
+        "mean": 0.7681333333333333,
+        "sample_std": 0.0032883633213702675,
+        "values": [
+          0.7694,
+          0.7706,
+          0.7644
+        ]
+      },
+      "best_fixed_timestep_values": [
+        12,
+        14,
+        12
+      ],
+      "early": {
+        "mean": 0.7857666666666666,
+        "sample_std": 0.0029297326385411917,
+        "values": [
+          0.7846,
+          0.7891,
+          0.7836
+        ]
+      },
+      "endpoint_class_token_norm": {
+        "mean": 2.831174419307709,
+        "sample_std": 0.15141916148428988,
+        "values": [
+          2.657328837454319,
+          2.934254181396961,
+          2.901940239071846
+        ]
+      },
+      "endpoint_relative_residual": {
+        "mean": 0.07673673952569564,
+        "sample_std": 0.0014882688021871367,
+        "values": [
+          0.07509957860484719,
+          0.07800778226852417,
+          0.07710285770371557
+        ]
+      },
+      "grace": {
+        "mean": 0.5747,
+        "sample_std": 0.039402918673621085,
+        "values": [
+          0.5597,
+          0.6194,
+          0.545
+        ]
+      },
+      "peak_minus_terminal_pp": {
+        "mean": 0.06666666666667043,
+        "sample_std": 0.04618802153517459,
+        "values": [
+          0.12000000000000899,
+          0.0400000000000067,
+          0.039999999999995595
+        ]
+      },
+      "terminal": {
+        "mean": 0.7936333333333333,
+        "sample_std": 0.0018556220879622544,
+        "values": [
+          0.7938,
+          0.7954,
+          0.7917
+        ]
+      },
+      "uniform": {
+        "mean": 0.7940333333333333,
+        "sample_std": 0.0015947831618540853,
+        "values": [
+          0.7936,
+          0.7958,
+          0.7927
+        ]
+      }
+    },
+    "24": {
+      "adaptive": {
+        "mean": 0.7681333333333333,
+        "sample_std": 0.0032883633213702675,
+        "values": [
+          0.7694,
+          0.7706,
+          0.7644
+        ]
+      },
+      "best_fixed_timestep_values": [
+        23,
+        14,
+        12
+      ],
+      "early": {
+        "mean": 0.7857666666666666,
+        "sample_std": 0.0029297326385411917,
+        "values": [
+          0.7846,
+          0.7891,
+          0.7836
+        ]
+      },
+      "endpoint_class_token_norm": {
+        "mean": 4.38475775299867,
+        "sample_std": 0.2605277386121529,
+        "values": [
+          4.08630369875431,
+          4.566674009466171,
+          4.501295550775528
+        ]
+      },
+      "endpoint_relative_residual": {
+        "mean": 0.04788140329072873,
+        "sample_std": 0.0005622452468585058,
+        "values": [
+          0.047260171466693285,
+          0.04835533785820007,
+          0.04802870054729283
+        ]
+      },
+      "grace": {
+        "mean": 0.5747,
+        "sample_std": 0.039402918673621085,
+        "values": [
+          0.5597,
+          0.6194,
+          0.545
+        ]
+      },
+      "peak_minus_terminal_pp": {
+        "mean": 0.1466666666666653,
+        "sample_std": 0.1795364401266001,
+        "values": [
+          0.009999999999998899,
+          0.08000000000000229,
+          0.34999999999999476
+        ]
+      },
+      "terminal": {
+        "mean": 0.7931666666666667,
+        "sample_std": 0.003707200201409839,
+        "values": [
+          0.7956,
+          0.795,
+          0.7889
+        ]
+      },
+      "uniform": {
+        "mean": 0.7941333333333334,
+        "sample_std": 0.0026006409466385956,
+        "values": [
+          0.7942,
+          0.7967,
+          0.7915
+        ]
+      }
+    },
+    "32": {
+      "adaptive": {
+        "mean": 0.7681333333333333,
+        "sample_std": 0.0032883633213702675,
+        "values": [
+          0.7694,
+          0.7706,
+          0.7644
+        ]
+      },
+      "best_fixed_timestep_values": [
+        23,
+        14,
+        12
+      ],
+      "early": {
+        "mean": 0.7857666666666666,
+        "sample_std": 0.0029297326385411917,
+        "values": [
+          0.7846,
+          0.7891,
+          0.7836
+        ]
+      },
+      "endpoint_class_token_norm": {
+        "mean": 5.922246092597644,
+        "sample_std": 0.36814453797558955,
+        "values": [
+          5.500907361245155,
+          6.181758635258674,
+          6.0840722812891
+        ]
+      },
+      "endpoint_relative_residual": {
+        "mean": 0.03477533596946548,
+        "sample_std": 0.00021927925565730626,
+        "values": [
+          0.03453448511995375,
+          0.03496341154705733,
+          0.034828111241385344
+        ]
+      },
+      "grace": {
+        "mean": 0.5747,
+        "sample_std": 0.039402918673621085,
+        "values": [
+          0.5597,
+          0.6194,
+          0.545
+        ]
+      },
+      "peak_minus_terminal_pp": {
+        "mean": 0.32333333333333475,
+        "sample_std": 0.047258156262525185,
+        "values": [
+          0.27000000000000357,
+          0.36000000000000476,
+          0.33999999999999586
+        ]
+      },
+      "terminal": {
+        "mean": 0.7915333333333333,
+        "sample_std": 0.002177919496522609,
+        "values": [
+          0.7933,
+          0.7922,
+          0.7891
+        ]
+      },
+      "uniform": {
+        "mean": 0.7940666666666667,
+        "sample_std": 0.0023965252624024843,
+        "values": [
+          0.7955,
+          0.7954,
+          0.7913
+        ]
+      }
+    },
+    "8": {
+      "adaptive": {
+        "mean": 0.7681333333333333,
+        "sample_std": 0.0032883633213702675,
+        "values": [
+          0.7694,
+          0.7706,
+          0.7644
+        ]
+      },
+      "best_fixed_timestep_values": [
+        8,
+        8,
+        8
+      ],
+      "early": {
+        "mean": 0.7857666666666666,
+        "sample_std": 0.0029297326385411917,
+        "values": [
+          0.7846,
+          0.7891,
+          0.7836
+        ]
+      },
+      "endpoint_class_token_norm": {
+        "mean": 1.2861919501284758,
+        "sample_std": 0.04528143489015286,
+        "values": [
+          1.2339119325995445,
+          1.3130448200941085,
+          1.3116190976917743
+        ]
+      },
+      "endpoint_relative_residual": {
+        "mean": 0.180568300332129,
+        "sample_std": 0.006389462803325979,
+        "values": [
+          0.17348224238753318,
+          0.18589067525714636,
+          0.18233198335170747
+        ]
+      },
+      "grace": {
+        "mean": 0.5747,
+        "sample_std": 0.039402918673621085,
+        "values": [
+          0.5597,
+          0.6194,
+          0.545
+        ]
+      },
+      "peak_minus_terminal_pp": {
+        "mean": 0.0,
+        "sample_std": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "terminal": {
+        "mean": 0.7919,
+        "sample_std": 0.0011000000000000454,
+        "values": [
+          0.7919,
+          0.793,
+          0.7908
+        ]
+      },
+      "uniform": {
+        "mean": 0.7857666666666666,
+        "sample_std": 0.0029297326385411917,
+        "values": [
+          0.7846,
+          0.7891,
+          0.7836
+        ]
+      }
+    }
+  },
+  "variant": "t32"
+}

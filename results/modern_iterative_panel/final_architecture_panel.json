@@ -1,0 +1,510 @@
+{
+  "causal_attention": {
+    "classification": "matched_horizon_restoration",
+    "criteria": {
+      "all_states_and_logits_finite": true,
+      "e17c_drop_smaller_every_seed": true,
+      "e17c_probe_drop_smaller_every_seed": true,
+      "e17c_terminal_within_0_5pp_best_fixed_every_seed": true,
+      "interaction_positive_every_seed": true,
+      "mean_interaction_at_least_1pp": true
+    },
+    "e17_drop_pp": {
+      "mean": 2.423333333333333,
+      "sample_std": 0.290918086982116,
+      "values": [
+        2.7000000000000024,
+        2.1199999999999997,
+        2.4499999999999966
+      ]
+    },
+    "e17_probe_drop_pp": {
+      "mean": 1.2799999999999996,
+      "sample_std": 0.07937253933194156,
+      "values": [
+        1.2499999999999956,
+        1.3700000000000045,
+        1.2199999999999989
+      ]
+    },
+    "e17c_drop_pp": {
+      "mean": 0.04333333333333226,
+      "sample_std": 0.17214335111567558,
+      "values": [
+        -0.15000000000000568,
+        0.10000000000000009,
+        0.18000000000000238
+      ]
+    },
+    "e17c_probe_drop_pp": {
+      "mean": 0.35000000000000214,
+      "sample_std": 0.10440306508910677,
+      "values": [
+        0.28000000000000247,
+        0.47000000000000375,
+        0.30000000000000027
+      ]
+    },
+    "interaction_pp": {
+      "mean": 2.380000000000001,
+      "sample_std": 0.4257933771208808,
+      "values": [
+        2.850000000000008,
+        2.0199999999999996,
+        2.2699999999999942
+      ]
+    },
+    "operational_definition": {
+      "matched_horizon_restoration": {
+        "maximum_e17c_terminal_deficit_to_best_fixed_pp_each_seed": 0.5,
+        "minimum_mean_interaction_pp": 1.0,
+        "require_all_finite": true,
+        "require_e17c_drop_smaller_each_seed": true,
+        "require_e17c_probe_drop_smaller_each_seed": true,
+        "require_positive_interaction_each_seed": true
+      },
+      "otherwise": "no_restoration",
+      "partial_restoration": "mean and seedwise shared-head interaction plus finite checks pass, but the best-timestep or probe criterion fails"
+    },
+    "seed_level": [
+      {
+        "all_finite": true,
+        "e17_drop_pp": 2.7000000000000024,
+        "e17_probe_drop_pp": 1.2499999999999956,
+        "e17_terminal_t32": 0.7683,
+        "e17_terminal_t8": 0.7953,
+        "e17c_drop_pp": -0.15000000000000568,
+        "e17c_probe_drop_pp": 0.28000000000000247,
+        "e17c_terminal_deficit_to_best_fixed_pp": 0.27000000000000357,
+        "e17c_terminal_t32": 0.7933,
+        "e17c_terminal_t8": 0.7918,
+        "interaction_pp": 2.850000000000008,
+        "seed": 101
+      },
+      {
+        "all_finite": true,
+        "e17_drop_pp": 2.1199999999999997,
+        "e17_probe_drop_pp": 1.3700000000000045,
+        "e17_terminal_t32": 0.7749,
+        "e17_terminal_t8": 0.7961,
+        "e17c_drop_pp": 0.10000000000000009,
+        "e17c_probe_drop_pp": 0.47000000000000375,
+        "e17c_terminal_deficit_to_best_fixed_pp": 0.36000000000000476,
+        "e17c_terminal_t32": 0.7924,
+        "e17c_terminal_t8": 0.7934,
+        "interaction_pp": 2.0199999999999996,
+        "seed": 102
+      },
+      {
+        "all_finite": true,
+        "e17_drop_pp": 2.4499999999999966,
+        "e17_probe_drop_pp": 1.2199999999999989,
+        "e17_terminal_t32": 0.7727,
+        "e17_terminal_t8": 0.7972,
+        "e17c_drop_pp": 0.18000000000000238,
+        "e17c_probe_drop_pp": 0.30000000000000027,
+        "e17c_terminal_deficit_to_best_fixed_pp": 0.33999999999999586,
+        "e17c_terminal_t32": 0.7891,
+        "e17c_terminal_t8": 0.7909,
+        "interaction_pp": 2.2699999999999942,
+        "seed": 103
+      }
+    ],
+    "significance_test": null,
+    "status": "complete"
+  },
+  "conditions": [
+    {
+      "best_step_t32_values": [
+        4,
+        4,
+        5
+      ],
+      "classification": "endpoint_invalidity",
+      "condition_id": "swiglu_ttrain8",
+      "drop_pp": {
+        "mean": 5.110000000000004,
+        "sample_std": 0.9429740187301009,
+        "values": [
+          4.9300000000000015,
+          6.130000000000003,
+          4.270000000000007
+        ]
+      },
+      "early_t32": {
+        "mean": 0.8122333333333334,
+        "sample_std": 0.0004725815626252714,
+        "values": [
+          0.8124,
+          0.8126,
+          0.8117
+        ]
+      },
+      "family": "residual recursion",
+      "model": "Recursive SwiGLU",
+      "probe_drop_pp": {
+        "mean": 2.2266666666666657,
+        "sample_std": 0.16563010998406846,
+        "values": [
+          2.210000000000001,
+          2.400000000000002,
+          2.069999999999994
+        ]
+      },
+      "terminal_by_horizon": {
+        "16": {
+          "mean": 0.7930333333333334,
+          "sample_std": 0.0026274195198584408,
+          "values": [
+            0.7945,
+            0.79,
+            0.7946
+          ]
+        },
+        "24": {
+          "mean": 0.7745666666666666,
+          "sample_std": 0.004957149718672325,
+          "values": [
+            0.7767,
+            0.7689,
+            0.7781
+          ]
+        },
+        "32": {
+          "mean": 0.7576333333333333,
+          "sample_std": 0.009625660150521251,
+          "values": [
+            0.7605,
+            0.7469,
+            0.7655
+          ]
+        },
+        "8": {
+          "mean": 0.8087333333333333,
+          "sample_std": 0.0009237604307033636,
+          "values": [
+            0.8098,
+            0.8082,
+            0.8082
+          ]
+        }
+      },
+      "terminal_t32": {
+        "mean": 0.7576333333333333,
+        "sample_std": 0.009625660150521251,
+        "values": [
+          0.7605,
+          0.7469,
+          0.7655
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.8087333333333333,
+        "sample_std": 0.0009237604307033636,
+        "values": [
+          0.8098,
+          0.8082,
+          0.8082
+        ]
+      },
+      "training_horizon": 8
+    },
+    {
+      "best_step_t32_values": [
+        17,
+        24,
+        22
+      ],
+      "classification": "matched_horizon_restoration",
+      "condition_id": "swiglu_ttrain32",
+      "drop_pp": {
+        "mean": -0.4166666666666689,
+        "sample_std": 0.1767295485574936,
+        "values": [
+          -0.6200000000000094,
+          -0.30000000000000027,
+          -0.32999999999999696
+        ]
+      },
+      "early_t32": {
+        "mean": 0.7971666666666667,
+        "sample_std": 0.0014468356276140795,
+        "values": [
+          0.7981,
+          0.7979,
+          0.7955
+        ]
+      },
+      "family": "residual recursion",
+      "model": "Recursive SwiGLU",
+      "probe_drop_pp": {
+        "mean": -0.24333333333332874,
+        "sample_std": 0.08020806277010867,
+        "values": [
+          -0.31999999999999806,
+          -0.15999999999999348,
+          -0.24999999999999467
+        ]
+      },
+      "terminal_by_horizon": {
+        "16": {
+          "mean": 0.8106666666666666,
+          "sample_std": 0.0016041612554021157,
+          "values": [
+            0.8122,
+            0.809,
+            0.8108
+          ]
+        },
+        "24": {
+          "mean": 0.811,
+          "sample_std": 0.00072111025509278,
+          "values": [
+            0.8116,
+            0.8102,
+            0.8112
+          ]
+        },
+        "32": {
+          "mean": 0.8084333333333333,
+          "sample_std": 0.0014571661996263228,
+          "values": [
+            0.8101,
+            0.8078,
+            0.8074
+          ]
+        },
+        "8": {
+          "mean": 0.8042666666666667,
+          "sample_std": 0.00047258156262525186,
+          "values": [
+            0.8039,
+            0.8048,
+            0.8041
+          ]
+        }
+      },
+      "terminal_t32": {
+        "mean": 0.8084333333333333,
+        "sample_std": 0.0014571661996263228,
+        "values": [
+          0.8101,
+          0.8078,
+          0.8074
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.8042666666666667,
+        "sample_std": 0.00047258156262525186,
+        "values": [
+          0.8039,
+          0.8048,
+          0.8041
+        ]
+      },
+      "training_horizon": 32
+    },
+    {
+      "best_step_t32_values": [
+        4,
+        5,
+        4
+      ],
+      "classification": "endpoint_invalidity",
+      "condition_id": "attention_ttrain8",
+      "drop_pp": {
+        "mean": 2.423333333333333,
+        "sample_std": 0.290918086982116,
+        "values": [
+          2.7000000000000024,
+          2.1199999999999997,
+          2.4499999999999966
+        ]
+      },
+      "early_t32": {
+        "mean": 0.7987666666666666,
+        "sample_std": 0.001050396750439244,
+        "values": [
+          0.7977,
+          0.7988,
+          0.7998
+        ]
+      },
+      "family": "shared-attention recursion",
+      "model": "Recursive attention",
+      "probe_drop_pp": {
+        "mean": 1.2799999999999996,
+        "sample_std": 0.07937253933194156,
+        "values": [
+          1.2499999999999956,
+          1.3700000000000045,
+          1.2199999999999989
+        ]
+      },
+      "terminal_by_horizon": {
+        "16": {
+          "mean": 0.7885333333333333,
+          "sample_std": 0.0019604421270043534,
+          "values": [
+            0.7867,
+            0.7906,
+            0.7883
+          ]
+        },
+        "24": {
+          "mean": 0.7803333333333333,
+          "sample_std": 0.001985782801147543,
+          "values": [
+            0.7781,
+            0.7819,
+            0.781
+          ]
+        },
+        "32": {
+          "mean": 0.7719666666666667,
+          "sample_std": 0.0033605555096343125,
+          "values": [
+            0.7683,
+            0.7749,
+            0.7727
+          ]
+        },
+        "8": {
+          "mean": 0.7962,
+          "sample_std": 0.0009539392014169512,
+          "values": [
+            0.7953,
+            0.7961,
+            0.7972
+          ]
+        }
+      },
+      "terminal_t32": {
+        "mean": 0.7719666666666667,
+        "sample_std": 0.0033605555096343125,
+        "values": [
+          0.7683,
+          0.7749,
+          0.7727
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.7962,
+        "sample_std": 0.0009539392014169512,
+        "values": [
+          0.7953,
+          0.7961,
+          0.7972
+        ]
+      },
+      "training_horizon": 8
+    },
+    {
+      "best_step_t32_values": [
+        23,
+        14,
+        12
+      ],
+      "classification": "matched_horizon_restoration",
+      "condition_id": "attention_ttrain32",
+      "drop_pp": {
+        "mean": 0.04333333333333226,
+        "sample_std": 0.17214335111567558,
+        "values": [
+          -0.15000000000000568,
+          0.10000000000000009,
+          0.18000000000000238
+        ]
+      },
+      "early_t32": {
+        "mean": 0.7857666666666666,
+        "sample_std": 0.0029297326385411917,
+        "values": [
+          0.7846,
+          0.7891,
+          0.7836
+        ]
+      },
+      "family": "shared-attention recursion",
+      "model": "Recursive attention",
+      "probe_drop_pp": {
+        "mean": 0.35000000000000214,
+        "sample_std": 0.10440306508910677,
+        "values": [
+          0.28000000000000247,
+          0.47000000000000375,
+          0.30000000000000027
+        ]
+      },
+      "terminal_by_horizon": {
+        "16": {
+          "mean": 0.7936333333333333,
+          "sample_std": 0.0018556220879622544,
+          "values": [
+            0.7938,
+            0.7954,
+            0.7917
+          ]
+        },
+        "24": {
+          "mean": 0.7931666666666667,
+          "sample_std": 0.003707200201409839,
+          "values": [
+            0.7956,
+            0.795,
+            0.7889
+          ]
+        },
+        "32": {
+          "mean": 0.7916,
+          "sample_std": 0.0022113344387495854,
+          "values": [
+            0.7933,
+            0.7924,
+            0.7891
+          ]
+        },
+        "8": {
+          "mean": 0.7920333333333334,
+          "sample_std": 0.001266227994214819,
+          "values": [
+            0.7918,
+            0.7934,
+            0.7909
+          ]
+        }
+      },
+      "terminal_t32": {
+        "mean": 0.7916,
+        "sample_std": 0.0022113344387495854,
+        "values": [
+          0.7933,
+          0.7924,
+          0.7891
+        ]
+      },
+      "terminal_t8": {
+        "mean": 0.7920333333333334,
+        "sample_std": 0.001266227994214819,
+        "values": [
+          0.7918,
+          0.7934,
+          0.7909
+        ]
+      },
+      "training_horizon": 32
+    }
+  ],
+  "figures": [
+    "results/modern_iterative_panel/final_panel_figure_1.png",
+    "results/modern_iterative_panel/final_panel_figure_2.png",
+    "results/modern_iterative_panel/final_panel_figure_3.png"
+  ],
+  "no_significance_test": true,
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "status": "complete"
+}

@@ -1,0 +1,87 @@
+{
+  "experiment": "E17",
+  "training_horizon": 8,
+  "test_horizon": 32,
+  "source": "frozen seed-level readout_metrics.json artifacts",
+  "evaluation_rerun": false,
+  "source_artifacts_modified": false,
+  "standard_deviation": {
+    "type": "sample",
+    "ddof": 1,
+    "denominator": "n - 1",
+    "n": 3
+  },
+  "readouts": {
+    "adaptive_stopping": {
+      "accuracy_by_seed": {
+        "101": 0.7939,
+        "102": 0.7921,
+        "103": 0.796
+      },
+      "percent_by_seed": {
+        "101": 79.39,
+        "102": 79.21,
+        "103": 79.6
+      },
+      "arithmetic_mean_accuracy": 0.794,
+      "arithmetic_mean_percent": 79.4,
+      "sample_standard_deviation_accuracy": 0.00195192212959432,
+      "sample_standard_deviation_percent": 0.195192212959432,
+      "previously_reported_approximate_mean_percent": 79.4,
+      "verification": "reproduced"
+    },
+    "grace": {
+      "accuracy_by_seed": {
+        "101": 0.7747,
+        "102": 0.7677,
+        "103": 0.7723
+      },
+      "percent_by_seed": {
+        "101": 77.47,
+        "102": 76.77,
+        "103": 77.23
+      },
+      "arithmetic_mean_accuracy": 0.771566666666667,
+      "arithmetic_mean_percent": 77.1566666666667,
+      "sample_standard_deviation_accuracy": 0.00355715241918776,
+      "sample_standard_deviation_percent": 0.355715241918776,
+      "previously_reported_approximate_mean_percent": 77.16,
+      "verification": "reproduced"
+    },
+    "uniform_averaging": {
+      "accuracy_by_seed": {
+        "101": 0.7827,
+        "102": 0.7864,
+        "103": 0.7855
+      },
+      "percent_by_seed": {
+        "101": 78.27,
+        "102": 78.64,
+        "103": 78.55
+      },
+      "arithmetic_mean_accuracy": 0.784866666666667,
+      "arithmetic_mean_percent": 78.4866666666667,
+      "sample_standard_deviation_accuracy": 0.00192959408512086,
+      "sample_standard_deviation_percent": 0.192959408512086,
+      "previously_reported_approximate_mean_percent": 78.49,
+      "verification": "reproduced"
+    }
+  },
+  "source_artifacts": [
+    {
+      "seed": 101,
+      "path": "C:\\Users\\maskr\\Documents\\NeurIPS26\\Terminal Failure\\results\\modern_iterative_panel\\attention_t8\\seed_101\\readout_metrics.json",
+      "sha256": "7383a457f2c4c46524bd73e0ef2ea5f8622f3f98fbe790942465014e409a9382"
+    },
+    {
+      "seed": 102,
+      "path": "C:\\Users\\maskr\\Documents\\NeurIPS26\\Terminal Failure\\results\\modern_iterative_panel\\attention_t8\\seed_102\\readout_metrics.json",
+      "sha256": "17fd87ba4159565212ad8195c943ea794fbff444950c3915ddfa84ac04d766b5"
+    },
+    {
+      "seed": 103,
+      "path": "C:\\Users\\maskr\\Documents\\NeurIPS26\\Terminal Failure\\results\\modern_iterative_panel\\attention_t8\\seed_103\\readout_metrics.json",
+      "sha256": "dedc6325b674a69498eaf5b8337d797f1d8006408a3f0b0492f3eee920e74bfc"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-07-24T12:58:13.7130376+01:00",
+  "hash_algorithm": "SHA-256",
+  "governing_instruction_sha256": "4e240d26858b90431ed7991ff464d53838e4456bf9874027eaeb2b5c4db9e176",
+  "followup_protocol_sha256": "1ee5276d886d9d7477f7855a16f8672697d20e729119ce4965e592d113f45b9d",
+  "followup_config_sha256": "f11fda7bc718679b7b6cf3f0058c4b41cfabd9872b144155e9c61f7a666f54c5",
+  "status": "frozen_before_classwise_checkpoint_probe_scale_or_final_panel_outputs"
+}

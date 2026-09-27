@@ -1,0 +1,10 @@
+{
+  "engineering_smoke_seed": 0,
+  "probe_subset_seed": 2026,
+  "scientific_seeds": [
+    101,
+    102,
+    103
+  ],
+  "status": "frozen_before_e17_smoke"
+}

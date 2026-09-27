@@ -1,0 +1,32 @@
+{
+  "definition": "three-seed mean class accuracy at T8 minus T32",
+  "models": {
+    "e16_t8": {
+      "classes": 200,
+      "classes_drop_at_least_2pp": 124,
+      "classes_drop_at_least_2pp_percent": 62.0,
+      "classes_lower_at_t32": 144,
+      "classes_lower_at_t32_percent": 72.0,
+      "complete_table_csv": "results\\modern_iterative_panel\\followup_analysis\\audits\\classwise_e16_t8.csv",
+      "iqr_drop_pp": 8.666666666666668,
+      "macro_average_drop_pp": 5.11,
+      "median_drop_pp": 2.6666666666666727,
+      "q1_drop_pp": 0.0,
+      "q3_drop_pp": 8.666666666666668
+    },
+    "e17_t8": {
+      "classes": 200,
+      "classes_drop_at_least_2pp": 105,
+      "classes_drop_at_least_2pp_percent": 52.5,
+      "classes_lower_at_t32": 153,
+      "classes_lower_at_t32_percent": 76.5,
+      "complete_table_csv": "results\\modern_iterative_panel\\followup_analysis\\audits\\classwise_e17_t8.csv",
+      "iqr_drop_pp": 3.3333333333333326,
+      "macro_average_drop_pp": 2.423333333333333,
+      "median_drop_pp": 2.0000000000000018,
+      "q1_drop_pp": 0.6666666666666599,
+      "q3_drop_pp": 3.9999999999999925
+    }
+  },
+  "status": "complete"
+}

@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{All frozen attention readouts.} Validation accuracy (\%, mean $\pm$ sample standard deviation, three seeds).}
+\label{tab:attention_readouts}
+\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$T_{\rm train}$ & $T_{\rm test}$ & Terminal & Early 8 & Uniform & Adaptive & \grace{} \\
+\midrule
+8 & 8 & $79.62\pm0.08$ & $79.88\pm0.11$ & $79.88\pm0.11$ & $79.40\pm0.20$ & $77.16\pm0.36$ \\
+8 & 16 & $78.85\pm0.20$ & $79.88\pm0.11$ & $79.41\pm0.07$ & $79.40\pm0.20$ & $77.16\pm0.36$ \\
+8 & 24 & $78.03\pm0.20$ & $79.88\pm0.11$ & $78.92\pm0.21$ & $79.40\pm0.20$ & $77.16\pm0.36$ \\
+8 & 32 & $77.20\pm0.33$ & $79.88\pm0.11$ & $78.49\pm0.19$ & $79.40\pm0.20$ & $77.16\pm0.36$ \\
+\midrule
+32 & 8 & $79.19\pm0.11$ & $78.58\pm0.29$ & $78.58\pm0.29$ & $76.81\pm0.33$ & $57.47\pm3.94$ \\
+32 & 16 & $79.36\pm0.19$ & $78.58\pm0.29$ & $79.40\pm0.16$ & $76.81\pm0.33$ & $57.47\pm3.94$ \\
+32 & 24 & $79.32\pm0.37$ & $78.58\pm0.29$ & $79.41\pm0.26$ & $76.81\pm0.33$ & $57.47\pm3.94$ \\
+32 & 32 & $79.15\pm0.22$ & $78.58\pm0.29$ & $79.41\pm0.24$ & $76.81\pm0.33$ & $57.47\pm3.94$ \\
+\bottomrule
+\end{tabular}
+\end{table}

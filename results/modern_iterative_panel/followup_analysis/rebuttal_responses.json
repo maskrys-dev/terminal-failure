@@ -1,0 +1,63 @@
+{
+  "compact_500_700": "On Tiny ImageNet-200 with frozen ConvNeXt-Tiny features, two weight-tied recursive heads showed horizon-mismatch endpoint loss. The 8-step SwiGLU dropped 5.11 +/- 0.94 pp at 32 test steps, while matched training removed it (interaction 5.53 +/- 0.92 pp). Shared attention dropped 2.42 +/- 0.29 pp, with its early-8 readout stable at 79.88 +/- 0.11% and probes dropping 1.28 +/- 0.08 pp. Its matched 32-step control dropped only 0.04 +/- 0.17 pp, yielding a paired interaction of 2.38 +/- 0.43 pp. Thus matching train and inference horizons restored endpoint validity in both tested systems.",
+  "compact_character_count": 590,
+  "full_character_count": 1992,
+  "full_technical": "To address the reviewers' requests for non-toy data, modern recursive architectures, and clearer endpoint-validity evidence, we evaluated two terminally supervised weight-tied systems on the standard 100,000/10,000-image Tiny ImageNet-200 splits using frozen ImageNet-pretrained ConvNeXt-Tiny representations. For the recursive SwiGLU head, extending an eight-step-trained model from T_test=8 to 32 reduced terminal accuracy from 80.87 +/- 0.09% to 75.76 +/- 0.96% (5.11 +/- 0.94 pp), while the early-eight readout remained 81.22 +/- 0.05%. The identical head trained for 32 steps instead reached 80.84 +/- 0.15% at T_test=32, giving a paired interaction of 5.53 +/- 0.92 pp. The shared-attention recursive head independently reproduced the effect: its eight-step-trained terminal fell from 79.62 +/- 0.10% to 77.20 +/- 0.34% (2.42 +/- 0.29 pp), while the early-eight readout remained 79.88 +/- 0.11% and the best states occurred at steps 4--5. A fixed-alpha probe declined by 1.28 +/- 0.08 pp, showing that the effect includes representation deterioration rather than only a shared-head mismatch. In the matched 32-step attention control, the terminal changed by only 0.04 +/- 0.17 pp from steps 8 to 32; every seed's endpoint was within 0.36 pp of its best fixed timestep, and the paired E17/E17C interaction was 2.38 +/- 0.43 pp. All states and logits remained finite, and no gain, horizon, readout threshold, probe setting, or checkpoint rule was tuned after viewing results. These results show that excess test-time recurrence can invalidate the terminal readout in both tested residual and shared-attention recursive systems, while matched-horizon training restores endpoint validity; they support a conditional endpoint-validity taxonomy rather than a universal claim. Measured E14 costs also show that an early-eight readout can halt at 1.803 ms versus 6.727 ms for terminal inference; naive GRACE used 48.56 MiB peak additional memory, while streaming GRACE reduced this to 8.51 MiB.",
+  "medium_1000_1500": "To address the request for modern recursive models and larger-scale evaluation, we tested two weight-tied architectures on Tiny ImageNet-200 using frozen ConvNeXt-Tiny representations. In the recursive SwiGLU model, extending an eight-step-trained system to 32 test iterations reduced terminal accuracy by 5.11 +/- 0.94 pp, while the early-eight readout remained stable; matched 32-step training removed the effect (paired interaction 5.53 +/- 0.92 pp). In a separate shared-attention recursive model, terminal accuracy fell from 79.62 +/- 0.10% to 77.20 +/- 0.34%, while its early-eight readout remained 79.88 +/- 0.11%; fixed probes also declined by 1.28 +/- 0.08 pp. Training the identical attention head for 32 steps reduced the terminal drop to 0.04 +/- 0.17 pp, kept every endpoint within 0.36 pp of its best fixed timestep, and produced a paired interaction of 2.38 +/- 0.43 pp. Thus the endpoint-versus-prefix mismatch replicates across residual and attention-based recursive systems and is removed, in these experiments, by matching the training and inference horizon.",
+  "medium_character_count": 1077,
+  "sentence_to_meta_review_mapping": [
+    {
+      "concerns": [
+        "toy datasets",
+        "toy models",
+        "modern recursive architectures"
+      ],
+      "sentence": "We tested two weight-tied architectures on Tiny ImageNet-200 using frozen ConvNeXt-Tiny representations."
+    },
+    {
+      "concerns": [
+        "larger-scale relevance",
+        "endpoint validity",
+        "causal control"
+      ],
+      "sentence": "The recursive SwiGLU horizon mismatch and matched control establish the causal training-horizon effect."
+    },
+    {
+      "concerns": [
+        "Universal-Transformer-style evidence",
+        "architectural breadth"
+      ],
+      "sentence": "Shared attention independently reproduces endpoint degradation while preserving an early prefix."
+    },
+    {
+      "concerns": [
+        "whether computation remains recoverable",
+        "readout versus representation"
+      ],
+      "sentence": "Fixed probes show representation deterioration in addition to shared-head degradation."
+    },
+    {
+      "concerns": [
+        "confounding by architecture",
+        "training/inference horizon alignment"
+      ],
+      "sentence": "Matched 32-step attention training restores endpoint validity with a positive paired interaction."
+    },
+    {
+      "concerns": [
+        "novelty and claim calibration",
+        "scope limitations"
+      ],
+      "sentence": "The claim is conditional rather than universal."
+    },
+    {
+      "concerns": [
+        "computational cost",
+        "memory cost",
+        "practical recommendation"
+      ],
+      "sentence": "Measured early-window and streaming-GRACE costs quantify the compute and memory trade-offs."
+    }
+  ],
+  "status": "complete"
+}

@@ -1,0 +1,9 @@
+Training e17c_recursive_attention_tinyimagenet_ttrain32 seed=102 on cuda, precision=bfloat16, config=d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d
+seed=102 epoch=01/30 train_loss=4.1859 train_acc=0.3008 val_acc=0.6673 val_loss=2.0953 lr=0.00015077
+seed=102 epoch=02/30 train_loss=1.9429 train_acc=0.7356 val_acc=0.7571 val_loss=1.1423 lr=0.00030000
+seed=102 epoch=03/30 train_loss=1.5967 train_acc=0.7940 val_acc=0.7766 val_loss=0.9830 lr=0.00029906
+seed=102 epoch=04/30 train_loss=1.4419 train_acc=0.8355 val_acc=0.7898 val_loss=0.9344 lr=0.00029624
+seed=102 epoch=05/30 train_loss=1.3236 train_acc=0.8687 val_acc=0.7906 val_loss=0.9221 lr=0.00029158
+seed=102 epoch=06/30 train_loss=1.2226 train_acc=0.8991 val_acc=0.7907 val_loss=0.9412 lr=0.00028515
+seed=102 epoch=07/30 train_loss=1.1408 train_acc=0.9240 val_acc=0.7922 val_loss=0.9622 lr=0.00027701
+seed=102 epoch=08/30 train_loss=1.0804 train_acc=0.9420 val_acc=0.7868 val_loss=0.9923 lr=0.00026727

@@ -1,0 +1,5 @@
+{
+  "ridge_alpha": 1.0,
+  "training_subset_size": 20000,
+  "validation_accuracy": 0.8052
+}

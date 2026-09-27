@@ -1,0 +1,30 @@
+{
+  "audit_time": "2026-07-23T22:49:24.2952128+01:00",
+  "git": {
+    "commit": null,
+    "deviation": "Git commit unavailable: the workspace .git directory exists but is empty, and no Git executable is available in the execution environment.",
+    "placeholder_git_directory_empty": true
+  },
+  "host_free_disk_gib_before_spatial_cache": 828.0367,
+  "python_environment": {
+    "interpreter": ".venv/Scripts/python.exe",
+    "source_hashes_recorded_before_smoke": true
+  },
+  "source_hashes": {
+    "transient_geometry/experiments/e17_recursive_attention_tinyimagenet.py": "c3a6f8c12625cc98ddd76466067ee1859011894f36dd1d7ebb901a66a33a823f"
+  },
+  "source_hash_history": [
+    {
+      "sha256": "103984b6ed048b2c431aca0bfc649640961cdd8012285949e021aaa407a2dbb8",
+      "status": "initial_implementation_before_cache_attempt",
+      "time": "2026-07-23T23:00:19.2387521+01:00"
+    },
+    {
+      "sha256": "c3a6f8c12625cc98ddd76466067ee1859011894f36dd1d7ebb901a66a33a823f",
+      "status": "engineering_file_copy_repair_before_any_image_extraction_or_smoke",
+      "time": "2026-07-23T23:02:05.3333787+01:00"
+    }
+  ],
+  "source_hash_time": "2026-07-23T23:02:05.3333787+01:00",
+  "status": "source_recorded_after_pre_extraction_engineering_repair_before_e17_smoke"
+}

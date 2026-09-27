@@ -1,0 +1,105 @@
+{
+  "experiment": "e14_recursive_tinyimagenet_rebuttal",
+  "status": "frozen_before_first_scientific_result",
+  "source_attachment_sha256": "26425A07C907FD861B8B2F4A8F8C7EC091197C2AAC55C4F9DEB4A01F3F35BB6D",
+  "dataset": {
+    "name": "Tiny ImageNet-200",
+    "root": "data/tiny-imagenet-200",
+    "train_examples": 100000,
+    "validation_examples": 10000,
+    "classes": 200,
+    "split": "standard train/labelled validation",
+    "augmentation": false
+  },
+  "backbone": {
+    "name": "torchvision.models.convnext_tiny",
+    "weights": "ConvNeXt_Tiny_Weights.DEFAULT",
+    "frozen": true,
+    "feature_dimension": 768,
+    "preprocessing": "weights.transforms()",
+    "feature_extraction_batch_size": 128
+  },
+  "architecture": {
+    "input_dimension": 768,
+    "state_dimension": 512,
+    "intermediate_dimension": 2048,
+    "normalisation": "LayerNorm",
+    "activation": "SwiGLU",
+    "dropout": 0.1,
+    "weight_tied": true,
+    "input_conditioned_after_h0": false,
+    "residual_scale": "lambda / training_horizon",
+    "training_horizon": 8,
+    "training_gain": 1.0,
+    "shared_classifier": true
+  },
+  "training": {
+    "objective": "terminal_cross_entropy_only",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "batch_size": 512,
+    "epochs": 30,
+    "warmup_epochs": 2,
+    "schedule": "cosine_decay",
+    "label_smoothing": 0.1,
+    "gradient_clip_norm": 1.0,
+    "seeds": [0, 1, 2],
+    "precision": "BF16_if_supported_else_FP16",
+    "checkpoint_selection": "terminal_validation_accuracy_at_T8_lambda1"
+  },
+  "evaluation": {
+    "trajectory_horizon": 32,
+    "gain_grid": [0.75, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6],
+    "headline_gains": [1.0, 1.3, 1.6],
+    "early_window": 8,
+    "random_chance_accuracy": 0.005
+  },
+  "readouts": {
+    "terminal": true,
+    "early_window": true,
+    "uniform": true,
+    "adaptive_stopping": {
+      "norm_ratio_threshold": 1.5
+    },
+    "grace": {
+      "norm_ratio_threshold": 1.2,
+      "alpha": 10.0
+    },
+    "fixed_grace_profile": {
+      "reference_gain": 1.3,
+      "source_split": "full_training_split",
+      "profile": "mean_of_normalized_per_sample_grace_weights"
+    }
+  },
+  "probes": {
+    "classifier": "sklearn.linear_model.RidgeClassifier",
+    "alpha": 1.0,
+    "training_subset_size": 20000,
+    "training_subset_seed": 2026,
+    "validation_subset": "full",
+    "dense_timestep_gains": [1.0, 1.3, 1.6],
+    "grace_period_accuracy_thresholds": [0.4, 0.5, 0.6]
+  },
+  "continuation_gate": {
+    "minimum_early_minus_terminal_pp": 1.0,
+    "required_consecutive_gains": 3,
+    "stable_gain": 1.0,
+    "maximum_stable_terminal_deficit_pp": 0.5,
+    "required_seed_sign_agreement": "2_of_3"
+  },
+  "benchmark": {
+    "batch_size": 512,
+    "trajectory_horizon": 32,
+    "state_dimension": 512,
+    "warmup_repetitions": 10,
+    "timed_repetitions": 25,
+    "statistic": "median"
+  },
+  "smoke_test": {
+    "training_examples": 4000,
+    "validation_examples": 2000,
+    "epochs": 3,
+    "minimum_validation_accuracy": 0.025
+  }
+}

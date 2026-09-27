@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "mean_early_within_1pp_of_trained_terminal": true,
+    "mean_terminal_drop_at_least_2pp": true,
+    "terminal_drop_positive_every_seed": true
+  },
+  "config_sha256": "b5d610a01747e1235ac4bcaab32b42fbe589569381b37628a447c6db4d3ffa21",
+  "evaluated_after_all_three_seeds": true,
+  "experiment": "e17_recursive_attention_tinyimagenet_ttrain8",
+  "probe_independent": true,
+  "run_t32_control": true
+}

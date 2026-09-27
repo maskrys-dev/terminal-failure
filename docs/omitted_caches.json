@@ -1,0 +1,17 @@
+[
+  {
+    "path": "results/modern_iterative_panel/spatial_cache/train_spatial_tokens_fp16.npy",
+    "bytes": 7526400128,
+    "reason": "regenerable frozen-backbone feature cache"
+  },
+  {
+    "path": "results/modern_iterative_panel/spatial_cache/validation_spatial_tokens_fp16.npy",
+    "bytes": 752640128,
+    "reason": "regenerable frozen-backbone feature cache"
+  },
+  {
+    "path": "results/rebuttal_recursive_tinyimagenet/feature_cache.pt",
+    "bytes": 338809565,
+    "reason": "regenerable frozen-backbone feature cache"
+  }
+]

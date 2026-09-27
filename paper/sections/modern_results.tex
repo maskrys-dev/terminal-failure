@@ -1,0 +1,77 @@
+\subsection{Modern Recursive Models on Tiny ImageNet}
+\label{sec:tinyimagenet}
+
+We test horizon extension on Tiny ImageNet-200 (100k training/10k labelled
+validation images), using frozen ConvNeXt-Tiny features~\citep{liu2022convnext}
+and weight-tied SwiGLU and shared-attention heads. Both use terminal
+cross-entropy, $T_{\rm train}\in\{8,32\}$, and paired seeds 101--103.
+Evaluation uses $T_{\rm test}\in\{8,16,24,32\}$ at gain 1, with residual
+scale $1/T_{\rm train}$ fixed. Matched controls change training depth and
+scale together; architecture details are in \Cref{app:modern_protocol}.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\linewidth]{fig_modern_horizon_readout.pdf}
+  \caption{\textbf{Horizon extension and early-prefix readout on Tiny ImageNet.}
+  \emph{(a)} Terminal accuracy over inference horizons for eight- and
+  32-step-trained SwiGLU and attention heads. \emph{(b)} Terminal versus
+  early-eight readout at $T_{\rm test}=32$. Early readout preserves accuracy
+  under horizon mismatch, while matched training restores a competitive
+  endpoint. Means and sample standard deviations across three paired seeds;
+  frozen ConvNeXt-Tiny backbone.}
+  \label{fig:modern_panel}
+\end{figure}
+
+In \Cref{fig:modern_panel}, extending the eight-step-trained SwiGLU
+model to 32 steps lowers terminal accuracy from $80.87\pm0.09\%$ to
+$75.76\pm0.96\%$, a $5.11\pm0.94$~pp loss; early-eight readout retains
+$81.22\pm0.05\%$. Shared attention reproduces the pattern: terminal accuracy
+falls from $79.62\pm0.10\%$ to $77.20\pm0.34\%$ ($2.42\pm0.29$~pp), while
+early-eight readout remains at $79.88\pm0.11\%$. Fixed-regularisation probes
+also lose $2.23\pm0.17$ and $1.28\pm0.08$~pp, respectively, indicating
+reduced linear decodability beyond shared-head mismatch.
+
+Matched 32-step training removes the strong endpoint loss: SwiGLU reaches
+$80.84\pm0.15\%$ at step 32, and attention loses only $0.04\pm0.17$~pp from
+steps 8 to 32. The paired difference in terminal loss between training
+conditions is $5.53\pm0.92$~pp for SwiGLU and $2.38\pm0.43$~pp for attention,
+positive in every seed; all states and logits remain finite. These statistics
+are descriptive, without significance claims (complete readouts and robustness
+analyses in \Cref{app:modern_readouts,app:modern_robustness}).
+
+The SwiGLU effect depends on checkpoint age: retained final-epoch checkpoints
+lose only $0.59$--$0.68$~pp, compared with $4.27$--$6.13$~pp at the selected
+checkpoints. Attention degradation persists across its retained checkpoint
+audit (\Cref{app:modern_robustness}).
+
+\subsection{Inference Time and Memory}
+\label{sec:cost}
+
+We benchmark six readouts on a separate seed-0 SwiGLU model with cached
+ConvNeXt features (\Cref{tab:cost_main}). Early-eight readout takes $1.80$~ms
+versus terminal's $6.73$~ms by executing fewer steps. Streaming \grace{}
+reduces additional peak allocation from $48.56$ to $8.51$~MiB but is slower;
+adaptive stopping incurs active-set overhead. Lower storage does not guarantee
+lower latency. \Cref{app:modern_cost} details the protocol and complexity.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Measured recurrent-head inference cost.} RTX 5080 Laptop GPU,
+BF16, batch 512, $d=512$, $T=32$, gain 1.3; median of 25 repetitions after
+10 warm-ups. Memory is additional peak allocated memory above the warmed-up
+baseline. Image decoding and backbone inference are excluded.}
+\label{tab:cost_main}
+\small
+\begin{tabular}{lrr}
+\toprule
+Readout & Latency (ms) & Additional peak (MiB) \\
+\midrule
+Terminal & 6.727 & 8.00 \\
+Early window ($K=8$) & 1.803 & 11.50 \\
+Adaptive stopping & 13.840 & 9.01 \\
+Uniform streaming & 6.889 & 8.50 \\
+\grace{}, stored trajectory & 6.948 & 48.56 \\
+\grace{}, streaming & 9.681 & 8.51 \\
+\bottomrule
+\end{tabular}
+\end{table}

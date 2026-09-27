@@ -1,0 +1,577 @@
+{
+  "criteria": {
+    "finite_and_material": {
+      "pass": true
+    },
+    "paired_interaction_substantial": {
+      "mean_threshold_pp": 1.0,
+      "mean_value_pp": 5.526666666666673,
+      "pass": true,
+      "positive_every_seed_required": true,
+      "values_pp": [
+        5.550000000000011,
+        6.430000000000003,
+        4.600000000000003
+      ]
+    },
+    "ttrain32_terminal_within_0_5pp_best_fixed": {
+      "each_seed_threshold_pp": 0.5,
+      "maximum_seed_value_pp": 0.49000000000000155,
+      "mean_threshold_pp": 0.5,
+      "mean_value_pp": 0.3266666666666677,
+      "pass": true
+    },
+    "ttrain8_early_drop_no_more_than_1pp": {
+      "each_seed_threshold_pp": 1.0,
+      "maximum_seed_value_pp": 0.0,
+      "mean_threshold_pp": 1.0,
+      "mean_value_pp": 0.0,
+      "pass": true
+    },
+    "ttrain8_mean_terminal_drop_at_least_2pp": {
+      "pass": true,
+      "threshold_pp": 2.0,
+      "value_pp": 5.110000000000004
+    },
+    "ttrain8_terminal_drop_positive_every_seed": {
+      "pass": true,
+      "values_pp": [
+        4.9300000000000015,
+        6.130000000000003,
+        4.270000000000007
+      ]
+    }
+  },
+  "evaluation_gain": 1.0,
+  "experiment": "e16_paired_inference_horizon",
+  "frozen_hashes": {
+    "aggregate_config": "e637a6854ac8b990d5a4822b4e7beece1b88226839b88360a86b84c89b60b605",
+    "protocol": "9cc8f8204b2fb92cb9e42c0f73ba172a3ba994264d4fe80596d35f00c30c9c28",
+    "ttrain32_config": "33a36523d381d7996f5e4f11a5d3e129f9d90542085227a3f7b8932e4c3f7bac",
+    "ttrain8_config": "6bdb5bdcc994f8e7f145042f6f2e5f5b85b0cb73c99dbeb740e13ead80084741"
+  },
+  "overall_confirmatory_pass": true,
+  "seed_level": [
+    {
+      "all_finite": true,
+      "interaction_pp": 5.550000000000011,
+      "materially_above_chance": true,
+      "seed": 101,
+      "ttrain32_best_fixed_t32": 0.8126,
+      "ttrain32_best_fixed_timestep_at_t32": 17,
+      "ttrain32_terminal_deficit_to_best_fixed_pp": 0.24999999999999467,
+      "ttrain32_terminal_drop_pp": -0.6200000000000094,
+      "ttrain32_terminal_t32": 0.8101,
+      "ttrain32_terminal_t8": 0.8039,
+      "ttrain8_early_drop_pp": 0.0,
+      "ttrain8_early_t32": 0.8124,
+      "ttrain8_early_t8": 0.8124,
+      "ttrain8_terminal_drop_pp": 4.9300000000000015,
+      "ttrain8_terminal_t32": 0.7605,
+      "ttrain8_terminal_t8": 0.8098
+    },
+    {
+      "all_finite": true,
+      "interaction_pp": 6.430000000000003,
+      "materially_above_chance": true,
+      "seed": 102,
+      "ttrain32_best_fixed_t32": 0.8102,
+      "ttrain32_best_fixed_timestep_at_t32": 24,
+      "ttrain32_terminal_deficit_to_best_fixed_pp": 0.24000000000000687,
+      "ttrain32_terminal_drop_pp": -0.30000000000000027,
+      "ttrain32_terminal_t32": 0.8078,
+      "ttrain32_terminal_t8": 0.8048,
+      "ttrain8_early_drop_pp": 0.0,
+      "ttrain8_early_t32": 0.8126,
+      "ttrain8_early_t8": 0.8126,
+      "ttrain8_terminal_drop_pp": 6.130000000000003,
+      "ttrain8_terminal_t32": 0.7469,
+      "ttrain8_terminal_t8": 0.8082
+    },
+    {
+      "all_finite": true,
+      "interaction_pp": 4.600000000000003,
+      "materially_above_chance": true,
+      "seed": 103,
+      "ttrain32_best_fixed_t32": 0.8123,
+      "ttrain32_best_fixed_timestep_at_t32": 22,
+      "ttrain32_terminal_deficit_to_best_fixed_pp": 0.49000000000000155,
+      "ttrain32_terminal_drop_pp": -0.32999999999999696,
+      "ttrain32_terminal_t32": 0.8074,
+      "ttrain32_terminal_t8": 0.8041,
+      "ttrain8_early_drop_pp": 0.0,
+      "ttrain8_early_t32": 0.8117,
+      "ttrain8_early_t8": 0.8117,
+      "ttrain8_terminal_drop_pp": 4.270000000000007,
+      "ttrain8_terminal_t32": 0.7655,
+      "ttrain8_terminal_t8": 0.8082
+    }
+  ],
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "status": "complete",
+  "terminal_drop_summaries": {
+    "interaction_pp": {
+      "mean": 5.526666666666673,
+      "sample_std": 0.9152231057689342,
+      "values": [
+        5.550000000000011,
+        6.430000000000003,
+        4.600000000000003
+      ]
+    },
+    "ttrain32_pp": {
+      "mean": -0.4166666666666689,
+      "sample_std": 0.1767295485574936,
+      "values": [
+        -0.6200000000000094,
+        -0.30000000000000027,
+        -0.32999999999999696
+      ]
+    },
+    "ttrain8_pp": {
+      "mean": 5.110000000000004,
+      "sample_std": 0.9429740187301009,
+      "values": [
+        4.9300000000000015,
+        6.130000000000003,
+        4.270000000000007
+      ]
+    }
+  },
+  "test_horizons": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "training_horizons": [
+    8,
+    32
+  ],
+  "trajectory_summary": {
+    "32": {
+      "16": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8109,
+          "sample_std": 0.001252996408614197,
+          "values": [
+            0.8122,
+            0.8097,
+            0.8108
+          ]
+        },
+        "best_fixed_timestep_values": [
+          16,
+          12,
+          16
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.7971666666666667,
+          "sample_std": 0.0014468356276140795,
+          "values": [
+            0.7981,
+            0.7979,
+            0.7955
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.02834425385631621,
+          "sample_std": 0.0002309212530679257,
+          "values": [
+            0.028084146641660482,
+            0.0284234861808829,
+            0.028525128746405243
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.8106666666666666,
+          "sample_std": 0.0016041612554021157,
+          "values": [
+            0.8122,
+            0.809,
+            0.8108
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": 1.3499999999999994,
+          "sample_std": 0.21633307652783862,
+          "values": [
+            1.4100000000000001,
+            1.1099999999999999,
+            1.529999999999998
+          ]
+        }
+      },
+      "24": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8117,
+          "sample_std": 0.0013076696830621854,
+          "values": [
+            0.8126,
+            0.8102,
+            0.8123
+          ]
+        },
+        "best_fixed_timestep_values": [
+          17,
+          24,
+          22
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.7971666666666667,
+          "sample_std": 0.0014468356276140795,
+          "values": [
+            0.7981,
+            0.7979,
+            0.7955
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.02350465610921383,
+          "sample_std": 0.00016327609064071,
+          "values": [
+            0.02331665737796575,
+            0.02358634939659387,
+            0.02361096155308187
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.811,
+          "sample_std": 0.00072111025509278,
+          "values": [
+            0.8116,
+            0.8102,
+            0.8112
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": 1.3833333333333326,
+          "sample_std": 0.17243356208503816,
+          "values": [
+            1.3499999999999956,
+            1.2299999999999978,
+            1.5700000000000047
+          ]
+        }
+      },
+      "32": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8117,
+          "sample_std": 0.0013076696830621854,
+          "values": [
+            0.8126,
+            0.8102,
+            0.8123
+          ]
+        },
+        "best_fixed_timestep_values": [
+          17,
+          24,
+          22
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.7971666666666667,
+          "sample_std": 0.0014468356276140795,
+          "values": [
+            0.7981,
+            0.7979,
+            0.7955
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.019700877299749602,
+          "sample_std": 0.00013031158920229628,
+          "values": [
+            0.019550602781958876,
+            0.019782669425848873,
+            0.019769359691441057
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.8084333333333333,
+          "sample_std": 0.0014571661996263228,
+          "values": [
+            0.8101,
+            0.8078,
+            0.8074
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": 1.1266666666666647,
+          "sample_std": 0.1184623709594519,
+          "values": [
+            1.200000000000001,
+            0.9899999999999909,
+            1.1900000000000022
+          ]
+        }
+      },
+      "8": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8042666666666667,
+          "sample_std": 0.00047258156262525186,
+          "values": [
+            0.8039,
+            0.8048,
+            0.8041
+          ]
+        },
+        "best_fixed_timestep_values": [
+          8,
+          8,
+          8
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.7971666666666667,
+          "sample_std": 0.0014468356276140795,
+          "values": [
+            0.7981,
+            0.7979,
+            0.7955
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.03335639908593148,
+          "sample_std": 0.0003464117839958344,
+          "values": [
+            0.0329793647384271,
+            0.03342922291634604,
+            0.033660609603021294
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.8042666666666667,
+          "sample_std": 0.00047258156262525186,
+          "values": [
+            0.8039,
+            0.8048,
+            0.8041
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": 0.7099999999999959,
+          "sample_std": 0.14106735979666613,
+          "values": [
+            0.5799999999999916,
+            0.6899999999999906,
+            0.8600000000000052
+          ]
+        }
+      }
+    },
+    "8": {
+      "16": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8123333333333334,
+          "sample_std": 0.0008621678104251853,
+          "values": [
+            0.8125,
+            0.8131,
+            0.8114
+          ]
+        },
+        "best_fixed_timestep_values": [
+          4,
+          4,
+          5
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.8122333333333334,
+          "sample_std": 0.0004725815626252714,
+          "values": [
+            0.8124,
+            0.8126,
+            0.8117
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.048602070809031526,
+          "sample_std": 0.0032580091872894627,
+          "values": [
+            0.046510895544663075,
+            0.05235595373064279,
+            0.04693936315178871
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.7930333333333334,
+          "sample_std": 0.0026274195198584408,
+          "values": [
+            0.7945,
+            0.79,
+            0.7946
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": -1.9199999999999995,
+          "sample_std": 0.29715315916206914,
+          "values": [
+            -1.7900000000000027,
+            -2.2599999999999953,
+            -1.7100000000000004
+          ]
+        }
+      },
+      "24": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8123333333333334,
+          "sample_std": 0.0008621678104251853,
+          "values": [
+            0.8125,
+            0.8131,
+            0.8114
+          ]
+        },
+        "best_fixed_timestep_values": [
+          4,
+          4,
+          5
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.8122333333333334,
+          "sample_std": 0.0004725815626252714,
+          "values": [
+            0.8124,
+            0.8126,
+            0.8117
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.03386142415081461,
+          "sample_std": 0.0021082735507414784,
+          "values": [
+            0.03253290225211531,
+            0.03629234566129744,
+            0.03275902453903109
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.7745666666666666,
+          "sample_std": 0.004957149718672325,
+          "values": [
+            0.7767,
+            0.7689,
+            0.7781
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": -3.766666666666666,
+          "sample_std": 0.5329477773040534,
+          "values": [
+            -3.5700000000000065,
+            -4.369999999999996,
+            -3.3599999999999963
+          ]
+        }
+      },
+      "32": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8123333333333334,
+          "sample_std": 0.0008621678104251853,
+          "values": [
+            0.8125,
+            0.8131,
+            0.8114
+          ]
+        },
+        "best_fixed_timestep_values": [
+          4,
+          4,
+          5
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.8122333333333334,
+          "sample_std": 0.0004725815626252714,
+          "values": [
+            0.8124,
+            0.8126,
+            0.8117
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.026236928040968874,
+          "sample_std": 0.0015534980423614231,
+          "values": [
+            0.02527916771452874,
+            0.028029344475269318,
+            0.025402271933108567
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.7576333333333333,
+          "sample_std": 0.009625660150521251,
+          "values": [
+            0.7605,
+            0.7469,
+            0.7655
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": -5.460000000000002,
+          "sample_std": 1.0026464980241019,
+          "values": [
+            -5.190000000000006,
+            -6.5699999999999985,
+            -4.620000000000002
+          ]
+        }
+      },
+      "8": {
+        "best_fixed_timestep_accuracy": {
+          "mean": 0.8123333333333334,
+          "sample_std": 0.0008621678104251853,
+          "values": [
+            0.8125,
+            0.8131,
+            0.8114
+          ]
+        },
+        "best_fixed_timestep_values": [
+          4,
+          4,
+          5
+        ],
+        "early_eight_accuracy": {
+          "mean": 0.8122333333333334,
+          "sample_std": 0.0004725815626252714,
+          "values": [
+            0.8124,
+            0.8126,
+            0.8117
+          ]
+        },
+        "endpoint_mean_relative_update_residual": {
+          "mean": 0.08649789792100589,
+          "sample_std": 0.007290343873034548,
+          "values": [
+            0.08179364901259542,
+            0.09489581805840135,
+            0.0828042266920209
+          ]
+        },
+        "terminal_accuracy": {
+          "mean": 0.8087333333333333,
+          "sample_std": 0.0009237604307033636,
+          "values": [
+            0.8098,
+            0.8082,
+            0.8082
+          ]
+        },
+        "terminal_minus_early_pp": {
+          "mean": -0.3499999999999985,
+          "sample_std": 0.08999999999999564,
+          "values": [
+            -0.26000000000000467,
+            -0.43999999999999595,
+            -0.34999999999999476
+          ]
+        }
+      }
+    }
+  }
+}

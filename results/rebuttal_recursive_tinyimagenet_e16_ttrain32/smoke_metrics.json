@@ -1,0 +1,54 @@
+{
+  "best_epoch": 3,
+  "best_validation_terminal_accuracy": 0.499,
+  "config_sha256": "33a36523d381d7996f5e4f11a5d3e129f9d90542085227a3f7b8932e4c3f7bac",
+  "elapsed_seconds": 1.4252738952636719,
+  "epochs": 3,
+  "finite_states_at_max_gain": true,
+  "history": [
+    {
+      "elapsed_seconds": 0.8133280277252197,
+      "epoch": 1,
+      "learning_rate": 0.00016874999999999998,
+      "nonfinite_batches": 0,
+      "training_accuracy": 0.01175,
+      "training_loss": 5.366912155151367,
+      "validation_loss": 5.063105834960938,
+      "validation_terminal_accuracy": 0.0365
+    },
+    {
+      "elapsed_seconds": 1.1106319427490234,
+      "epoch": 2,
+      "learning_rate": 0.0003,
+      "nonfinite_batches": 0,
+      "training_accuracy": 0.197,
+      "training_loss": 4.618677707672119,
+      "validation_loss": 4.025877685546875,
+      "validation_terminal_accuracy": 0.3505
+    },
+    {
+      "elapsed_seconds": 1.4252738952636719,
+      "epoch": 3,
+      "learning_rate": 0.0,
+      "nonfinite_batches": 0,
+      "training_accuracy": 0.591,
+      "training_loss": 3.4819072704315186,
+      "validation_loss": 3.3771956787109376,
+      "validation_terminal_accuracy": 0.499
+    }
+  ],
+  "logits_shape": [
+    512,
+    32,
+    200
+  ],
+  "loss_decreased": true,
+  "pass": true,
+  "seed": 0,
+  "trajectory_shape": [
+    512,
+    32,
+    512
+  ],
+  "validation_threshold": 0.025
+}

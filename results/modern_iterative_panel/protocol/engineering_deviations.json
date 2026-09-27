@@ -1,0 +1,32 @@
+{
+  "deviations": [
+    {
+      "action": "Changed copied-config validation from byte equality to parsed JSON equality and made new config copies byte-preserving.",
+      "attempt_status": "The first feature-stage invocation stopped before dataset validation, image loading, feature extraction, model training, or trajectory evaluation.",
+      "category": "engineering_file_copy_repair",
+      "reason": "Python text reading normalised Windows newlines in the copied JSON, so its byte hash differed even though the parsed frozen configuration was identical.",
+      "scientific_effect": "none",
+      "scientific_protocol_changed": false,
+      "time": "2026-07-23T23:02:05.3333787+01:00"
+    },
+    {
+      "action": "Preserved the incomplete seed-102 directory under attention_t32_control/failed_attempts/seed_102_attempt_1_runner_pipe_closed and restarted seed 102 from epoch 1 with the identical frozen seed and configuration.",
+      "attempt_status": "The external runner pipe closed after the epoch-8 summary was written. No Python process survived. All eight finite epoch summaries, the training log, and seven improving checkpoints were preserved without overwrite.",
+      "category": "execution_channel_crash_recovery",
+      "reason": "The interrupted checkpoints contain model weights but not optimizer, scheduler, data-generator, or RNG state, so an epoch-8 resume would not exactly reproduce the frozen trajectory. A clean deterministic restart is the scientifically conservative recovery.",
+      "scientific_effect": "none",
+      "scientific_protocol_changed": false,
+      "time": "2026-07-24T09:30:12.2014230+01:00"
+    },
+    {
+      "action": "Preserved the incomplete seed-103 directory under attention_t32_control/failed_attempts/seed_103_attempt_1_command_timeout_epoch30 and restarted seed 103 from epoch 1 with the identical frozen seed and configuration using a four-hour runner allowance.",
+      "attempt_status": "The one-hour command allowance expired during epoch 30 after 29 finite epoch summaries had been written. No Python process survived and no epoch-30 summary, training history, selected checkpoint, or final checkpoint had been committed.",
+      "category": "execution_timeout_recovery",
+      "reason": "Later epochs slowed when the laptop GPU operated at approximately 28 W. Because optimizer, scheduler, data-generator, and RNG state were not checkpointed, a clean deterministic restart is required instead of an inexact epoch-29 resume.",
+      "scientific_effect": "none",
+      "scientific_protocol_changed": false,
+      "time": "2026-07-24T11:52:33.2619934+01:00"
+    }
+  ],
+  "status": "engineering_deviations_recorded_without_scientific_protocol_change"
+}

@@ -1,0 +1,5 @@
+seed	terminal_T8	terminal_T32	drop_pp	early_T32	best_step	probe_drop_pp	classification
+101	0.7918	0.7933	-0.15	0.7846	23	+0.28	matched_horizon_control
+102	0.7934	0.7924	+0.10	0.7891	14	+0.47	matched_horizon_control
+103	0.7909	0.7891	+0.18	0.7836	12	+0.30	matched_horizon_control
+mean+-sd	0.7920+-0.0013	0.7916+-0.0022	+0.04+-0.17	0.7858+-0.0029	23/14/12	+0.35+-0.10	matched_horizon_control

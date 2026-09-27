@@ -1,0 +1,44 @@
+{
+  "status": "frozen_before_robustness_audits",
+  "governing_instruction_sha256": "4e240d26858b90431ed7991ff464d53838e4456bf9874027eaeb2b5c4db9e176",
+  "seeds": [101, 102, 103],
+  "test_horizons": [8, 16, 24, 32],
+  "gain": 1.0,
+  "causal_classification": {
+    "matched_horizon_restoration": {
+      "maximum_e17c_terminal_deficit_to_best_fixed_pp_each_seed": 0.5,
+      "minimum_mean_interaction_pp": 1.0,
+      "require_e17c_drop_smaller_each_seed": true,
+      "require_positive_interaction_each_seed": true,
+      "require_all_finite": true,
+      "require_e17c_probe_drop_smaller_each_seed": true
+    },
+    "partial_restoration": "mean and seedwise shared-head interaction plus finite checks pass, but the best-timestep or probe criterion fails",
+    "otherwise": "no_restoration"
+  },
+  "classwise": {
+    "classes": 200,
+    "primary_drop": "mean_seed_class_accuracy_t8_minus_mean_seed_class_accuracy_t32",
+    "minimum_reported_drop_pp": 2.0,
+    "exclude_classes": false
+  },
+  "checkpoint_sensitivity": {
+    "e16_ttrain8": ["selected", "saved_final_epoch"],
+    "e17_ttrain8": ["selected", "up_to_top_three_saved_improving_checkpoints"],
+    "reconstruct_missing_checkpoints": false
+  },
+  "probe": {
+    "classifier": "sklearn.linear_model.RidgeClassifier",
+    "alpha": 1.0,
+    "standardisation": false,
+    "training_subset": "results/rebuttal_recursive_tinyimagenet/probe_subset_indices.npy",
+    "training_subset_sha256": "9f7378e1c3cde52953ea5096b6b80cfb4b52fff8cafcd87be19d9b366590a19d",
+    "training_subset_size": 20000,
+    "validation_examples": 10000
+  },
+  "figures": [
+    "terminal_accuracy_versus_horizon",
+    "terminal_drop_by_condition",
+    "terminal_versus_early_at_t32"
+  ]
+}

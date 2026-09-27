@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Final four-condition panel.} Accuracy is in percent; loss is $A(8)-A(32)$ in percentage points. Means and sample standard deviations across three seeds.}
+\label{tab:modern_summary}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Model & $T_{\rm train}$ & Terminal 8 & Terminal 32 & Early 8 & Loss (pp) \\
+\midrule
+SwiGLU & 8 & $80.87\pm0.09$ & $75.76\pm0.96$ & $81.22\pm0.05$ & $5.11\pm0.94$ \\
+SwiGLU & 32 & $80.43\pm0.05$ & $80.84\pm0.15$ & $79.72\pm0.14$ & $-0.42\pm0.18$ \\
+attention & 8 & $79.62\pm0.10$ & $77.20\pm0.34$ & $79.88\pm0.11$ & $2.42\pm0.29$ \\
+attention & 32 & $79.20\pm0.13$ & $79.16\pm0.22$ & $78.58\pm0.29$ & $0.04\pm0.17$ \\
+\bottomrule
+\end{tabular}
+\end{table}

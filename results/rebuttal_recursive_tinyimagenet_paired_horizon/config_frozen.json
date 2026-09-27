@@ -1,0 +1,33 @@
+{
+  "experiment": "e16_paired_inference_horizon",
+  "status": "frozen_before_first_engineering_or_scientific_result",
+  "protocol": "Rebuttal/Terminal_Failure_E16_Paired_Horizon_Protocol.md",
+  "paired_seeds": [101, 102, 103],
+  "training_horizons": [8, 32],
+  "evaluation_gain": 1.0,
+  "test_horizons": [8, 16, 24, 32],
+  "early_window": 8,
+  "best_fixed_readout_definition": "maximum shared-head accuracy at one timestep t <= T_test",
+  "criteria": {
+    "t8_minimum_mean_terminal_drop_pp": 2.0,
+    "t8_maximum_mean_early_drop_pp": 1.0,
+    "t8_maximum_each_seed_early_drop_pp": 1.0,
+    "t8_require_terminal_drop_positive_every_seed": true,
+    "t32_maximum_mean_terminal_deficit_to_best_fixed_pp": 0.5,
+    "t32_maximum_each_seed_terminal_deficit_to_best_fixed_pp": 0.5,
+    "minimum_mean_interaction_pp": 1.0,
+    "require_positive_interaction_every_seed": true,
+    "minimum_material_accuracy": 0.025,
+    "require_all_states_and_logits_finite": true
+  },
+  "paired_control": {
+    "same_initialisation_seed": true,
+    "same_minibatch_order_seed": true,
+    "only_scientific_training_difference": "architecture.training_horizon and implied lambda/training_horizon residual scale"
+  },
+  "reporting": {
+    "primary_significance_test": false,
+    "report_every_seed": true,
+    "report_mean_and_sample_standard_deviation": true
+  }
+}

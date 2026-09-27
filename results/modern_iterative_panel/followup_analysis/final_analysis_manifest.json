@@ -1,0 +1,74 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3444,
+      "path": "results\\modern_iterative_panel\\followup_analysis\\e17_e17c_causal_aggregation.json",
+      "sha256": "21b7145d9317fc0381360ba1e9fcf2229ac5c4ec3a92669965dee91e352ab557"
+    },
+    {
+      "bytes": 12726,
+      "path": "results\\modern_iterative_panel\\final_architecture_panel.json",
+      "sha256": "25df2d381d60ef6fdbf2f71d7c93a5d1c1d531d06c6d5748e566dd21bb37d530"
+    },
+    {
+      "bytes": 929,
+      "path": "results\\modern_iterative_panel\\final_architecture_panel.md",
+      "sha256": "9ff86396db9c759ab0375e5107ed8350ed2e7eec997dd8e3a1a9f67a191c4191"
+    },
+    {
+      "bytes": 1340,
+      "path": "results\\modern_iterative_panel\\final_architecture_panel.csv",
+      "sha256": "c6117acd92ab2bb8ca955ff9c13c618dc3410ef4bb174db1bc63a53ded649c37"
+    },
+    {
+      "bytes": 158294,
+      "path": "results\\modern_iterative_panel\\final_panel_figure_1.png",
+      "sha256": "7dc9ede974d83d88306be9417371700dcca6e907c1dc1709b4f8dd9ffd91e48f"
+    },
+    {
+      "bytes": 60622,
+      "path": "results\\modern_iterative_panel\\final_panel_figure_2.png",
+      "sha256": "723912cebb0bc644977405f72b31e7d81df27966457e7cc3dd5bf607b13d9324"
+    },
+    {
+      "bytes": 74127,
+      "path": "results\\modern_iterative_panel\\final_panel_figure_3.png",
+      "sha256": "235472d8b8dc5225b961f062f9a21fd950885de518aae2f6eeac237f5e962105"
+    },
+    {
+      "bytes": 1159,
+      "path": "results\\modern_iterative_panel\\followup_analysis\\audits\\classwise_robustness.json",
+      "sha256": "eb858f8bd735f2153662100a97b1d7ef400194cda2fbcd1dfcdc8704eb21d67d"
+    },
+    {
+      "bytes": 8105,
+      "path": "results\\modern_iterative_panel\\followup_analysis\\audits\\checkpoint_sensitivity.json",
+      "sha256": "6ed495798bd790e48b4ab23f83237f8100e273f7df21dd83d22aace8053e5153"
+    },
+    {
+      "bytes": 3886,
+      "path": "results\\modern_iterative_panel\\followup_analysis\\audits\\e16_probe_audit.json",
+      "sha256": "f719fdcce9932436c890d5babebdcad87d65847da32a17336cd7b1aaf2630689"
+    },
+    {
+      "bytes": 3512,
+      "path": "results\\modern_iterative_panel\\followup_analysis\\audits\\model_scale.json",
+      "sha256": "93a0f723faa5a41831f651b84f3d986cda2bf806402bf0dcfb0d8c883dffdadb"
+    },
+    {
+      "bytes": 13604,
+      "path": "results\\modern_iterative_panel\\followup_analysis\\audits\\provenance_audit.json",
+      "sha256": "1fe4d7086f40a901de4c8e03f6efb6db1a0ab593c8ab3ab6a5c44fc99479ac8a"
+    },
+    {
+      "bytes": 5558,
+      "path": "results\\modern_iterative_panel\\followup_analysis\\rebuttal_responses.json",
+      "sha256": "7cf4033bd30c3b5eac38385e148931132891c212b5bcaf41794881de241149c8"
+    }
+  ],
+  "optional_deq": {
+    "reason": "Protected EP compute and the required >=30-hour remaining deadline budget cannot be verified; the frozen DEQ start conditions therefore do not all pass.",
+    "status": "skipped"
+  },
+  "status": "complete"
+}

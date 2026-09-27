@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Fixed-alpha probe accuracy.} Separately fitted probes share ridge $\alpha=1$ and a fixed training subset. Accuracy in percent; loss in pp.}
+\label{tab:modern_probes}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Model & $T_{\rm train}$ & Step 8 & Early 8 & Step 32 & Loss (pp) \\
+\midrule
+SwiGLU & 8 & $81.31\pm0.14$ & $81.48\pm0.12$ & $79.08\pm0.29$ & $2.23\pm0.17$ \\
+SwiGLU & 32 & $81.12\pm0.01$ & $80.75\pm0.06$ & $81.36\pm0.09$ & $-0.24\pm0.08$ \\
+Attention & 8 & $79.59\pm0.06$ & $79.79\pm0.07$ & $78.31\pm0.08$ & $1.28\pm0.08$ \\
+Attention & 32 & $79.33\pm0.35$ & $79.39\pm0.30$ & $78.98\pm0.30$ & $0.35\pm0.10$ \\
+\bottomrule
+\end{tabular}
+\end{table}

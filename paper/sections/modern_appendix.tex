@@ -1,0 +1,264 @@
+\section{Tiny ImageNet: Architecture and Evaluation Protocol}
+\label{app:modern_protocol}
+
+\paragraph{Data and frozen representations.}
+We use the standard Tiny ImageNet-200 training and labelled validation splits:
+100,000 training images (500 per class) and 10,000 validation images (50 per
+class), available from the
+\href{http://cs231n.stanford.edu/tiny-imagenet-200.zip}{standard source distribution}.
+The frozen backbone is
+torchvision's ImageNet-pretrained ConvNeXt-Tiny~\citep{liu2022convnext}, with
+the preprocessing supplied with its default pretrained weights; no
+additional training augmentation is applied. The residual head receives
+768-dimensional pooled features. The attention head receives the $7\times7$
+spatial feature map after the frozen backbone's final channel LayerNorm,
+stored as 49 tokens of dimension 768. Backbone weights are never updated.
+The torchvision implementation is distributed under the BSD 3-Clause licence;
+the Tiny ImageNet and ImageNet source terms apply to the images and pretrained
+weights. We do not redistribute these assets in the manuscript source package.
+
+\paragraph{Residual SwiGLU head.}
+A learned projection maps pooled features to $h_0\in\R^{512}$. The tied
+recurrence is
+\[
+ h_{t+1}=h_t+\frac{\lambda}{T_{\rm train}}
+ D\!\left(W_o\left[\operatorname{SiLU}(W_g\operatorname{LN}(h_t)+b_g)
+ \odot(W_v\operatorname{LN}(h_t)+b_v)\right]+b_o\right),
+\]
+where the gate and value projections have width 2048 and $D$ is dropout
+with probability 0.1 during training. A shared LayerNorm and linear
+200-class head classify the resulting state. There is no input reinjection
+after $h_0$ and no intermediate supervision.
+
+\paragraph{Shared-attention head.}
+A learned projection maps each spatial token to width 256. A learned class
+token and fixed two-dimensional sinusoidal spatial positions are added once
+before recursion. Each tied block applies pre-normalised eight-head
+self-attention, followed by a pre-normalised SwiGLU feed-forward sublayer
+of width 1024. Each residual branch is scaled by $\lambda/T_{\rm train}$;
+attention probabilities, attention outputs, and feed-forward outputs use
+dropout 0.1. Attention is unmasked over the 50 tokens. A shared LayerNorm
+and linear classifier read the class token. Parameters are shared across
+all recurrent steps, without intermediate supervision or input reinjection.
+
+\paragraph{Training and checkpoint selection.}
+Each architecture is trained separately at $T_{\rm train}=8$ and 32, with
+paired seeds 101, 102, and 103: 12 completed training runs. All runs use
+terminal cross-entropy, AdamW (learning rate $3\times10^{-4}$, weight decay
+0.01), 30 epochs, two warm-up epochs followed by cosine decay, label smoothing
+0.1, gradient clipping at norm 1, and nominal batch size 512. Attention uses
+physical batches of 128 and four accumulation steps, retaining the final
+partial accumulation group. Runs use BF16 on an RTX 5080 Laptop GPU.
+Checkpoints are selected by terminal validation accuracy at the training
+horizon and gain 1, with the earliest maximum retained. The same validation
+set supplies reported evaluation accuracies; there is no additional untouched
+test split. These are controlled representation experiments, not benchmark
+leaderboard estimates.
+
+\paragraph{Horizon comparison.}
+All final-panel evaluations fix gain $\lambda=1$ and use horizons 8, 16, 24,
+and 32. Within a trained model, the step scale remains fixed as the evaluation
+horizon changes. Between the eight- and 32-step training conditions, both
+training depth and the prescribed residual scale $1/T_{\rm train}$ change.
+The matched condition therefore tests the complete horizon-dependent training
+configuration; it does not isolate training depth from step size. Early-eight
+features average the first eight post-update states (class-token states for
+attention) and are decoded by the shared trained head. Terminal loss is
+$D=A(8)-A(32)$ in percentage points. The paired interaction is
+$D_{T_{\rm train}=8}-D_{T_{\rm train}=32}$ for each seed. All $\pm$ values in
+these additional experiments denote sample standard deviation across the
+three seeds, with denominator $n-1$. No significance test is used at $n=3$.
+
+\input{sections/generated_modern_summary}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\linewidth]{fig_modern_horizon_drop.pdf}
+\caption{\textbf{Matched training removes the strong horizon-extension loss.}
+Terminal $A(8)-A(32)$ for the four recursive conditions. Negative values mean
+the endpoint improves with additional steps. Points show individual seeds;
+bars and error bars show means and sample standard deviations ($n=3$).
+This is the difference summary of the curves in \Cref{fig:modern_panel}.}
+\label{fig:modern_drop}
+\end{figure}
+
+\section{Tiny ImageNet: Readouts and Representation Probes}
+\label{app:modern_readouts}
+
+\paragraph{Frozen readout settings.}
+Early-window uses $K=8$, adaptive stopping uses norm-ratio threshold 1.5,
+and \grace{} uses $(\tau,\alpha)=(1.2,10)$. These settings are not tuned for
+attention. Uniform averaging and \grace{} use the available trajectory through
+each evaluation horizon. The shared classification head is applied to the
+aggregated state, without retraining. The table below retains all attention
+readouts, including underperformance of the norm-weighted rule in the matched
+32-step condition. The modern experiments support an endpoint-validity
+diagnosis rather than universal dominance of \grace{}.
+
+\input{sections/generated_attention_readouts}
+
+The horizon headline uses the saved full-trajectory classification results;
+the readout table uses the separately classified feature aggregates. Their
+attention terminal scores differ by a few examples because BF16 classifier
+matrix multiplications use different tensor shapes. Each series is retained
+consistently; these small differences do not alter the reported pattern.
+
+\paragraph{Fixed-regularisation representation probes.}
+We fit separate RidgeClassifiers with $\alpha_{\rm ridge}=1$ on step-8,
+early-eight, and step-32 features, using the same fixed 20,000-example
+training subset (subset seed 2026), no feature standardisation, and all
+10,000 validation examples. The regularisation is fixed, while each
+representation receives its own fitted coefficients. This distinguishes a
+loss of linear decodability from failure of the shared trained head alone.
+
+\input{sections/generated_modern_probes}
+
+For eight-step training, both architectures lose accuracy under both the
+shared head and refitted probes. Matching the training horizon removes the
+large probe loss: the SwiGLU probe improves by $0.24\pm0.08$~pp and the
+attention probe loses only $0.35\pm0.10$~pp. This is evidence about the tested
+linear decoders, not a proof that all task information is irrecoverably lost.
+
+\section{Tiny ImageNet: Robustness and Preliminary Controls}
+\label{app:modern_robustness}
+
+\paragraph{Classwise robustness.}
+The classwise loss is the mean step-8 accuracy minus mean step-32 accuracy
+across seeds, evaluated separately in each of the 200 classes. All classes
+are included. SwiGLU has a median loss of 2.67~pp (IQR 0.00--8.67), with
+144/200 classes losing accuracy and 124/200 losing at least 2~pp. Attention
+has a median loss of 2.00~pp (IQR 0.67--4.00), with 153/200 classes losing
+accuracy and 105/200 losing at least 2~pp. The macro-mean losses are 5.11
+and 2.42~pp, respectively. The degradation is therefore distributed across
+many classes.
+
+\paragraph{Checkpoint sensitivity.}
+We evaluate existing saved states without changing the headline selection
+rule. Every audited checkpoint has a positive step-8-minus-step-32 loss,
+but its magnitude depends on checkpoint age. SwiGLU's selected checkpoints
+(epochs 3--4) lose 4.27--6.13~pp, while final-epoch checkpoints lose only
+0.59--0.68~pp. Continued eight-step training therefore substantially reduces
+the loss even without matched 32-step training. For attention, the top three
+saved improving checkpoints per seed lose 2.12--3.49~pp; the selected
+checkpoint has the smallest loss among those saved alternatives in each seed.
+Intermediate SwiGLU checkpoints and final-epoch attention states were not
+retained, limiting the comparisons possible from saved artifacts.
+
+\input{sections/generated_checkpoint_table}
+
+\paragraph{Seed-0 gain-sweep pilots.}
+Before the paired panel, two SwiGLU pilots used gain values
+$\{0.75,1.0,1.1,1.2,1.3,1.4,1.5,1.6\}$. The first trained for eight steps
+and evaluated for 32. Its early-minus-terminal gap was already 4.93~pp at
+nominal gain, so it failed the predeclared requirement for a competitive
+nominal endpoint before gain stress. The aligned 32-step pilot restored the
+nominal endpoint but had a maximum early-window advantage of only 0.27~pp,
+failing the criterion of at least 1~pp at three consecutive gains. Each pilot
+was stopped after seed 0; neither is a three-seed confirmation. These outcomes
+motivated the subsequently frozen paired horizon comparison with fresh seeds.
+The direct fixed-alpha probe on pooled ConvNeXt features scored 80.52\%.
+
+\input{sections/generated_pilot_readouts}
+
+The pilots also compare per-sample \grace{} with a fixed temporal profile,
+formed by averaging normalised training-sample \grace{} weights at gain 1.3
+and then freezing that profile across gains. They show no consistent advantage
+for per-sample weighting. At gain 1.6 in the aligned pilot, uniform averaging,
+\grace{}, and the fixed profile score 80.79\%, 80.66\%, and 80.68\%,
+respectively. A saved-trajectory horizon audit of the eight-step pilot at gain
+1 gives terminal accuracy 80.82\% at step 8 and 75.92\% at step 32, consistent
+with the later paired panel. No new canonical-DEQ experiment was completed;
+the DEQ-style evidence in \Cref{app:deq} remains the original limited check.
+
+\section{Tiny ImageNet: Model Scale, Runtime, and Memory}
+\label{app:modern_cost}
+
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Scale of the modern recursive systems.} The executed frozen
+backbone has 27,820,128 parameters. One multiply-add counts as two FLOPs.}
+\label{tab:modern_scale}
+\small
+\begin{tabular}{lrr}
+\toprule
+Quantity & SwiGLU & Attention \\
+\midrule
+Input & pooled 768-d & $49\times768$ tokens \\
+Recursive width & 512 & 256 \\
+Intermediate width & 2,048 & 1,024 \\
+Attention heads & --- & 8 \\
+Trainable head parameters & 3,648,712 & 1,301,960 \\
+Executed total parameters & 31,468,840 & 29,122,088 \\
+Dominant recurrent FLOPs/step & 6,291,456 & 107,517,600 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For state width $d$, intermediate width $m$, $n$ tokens, and $h$ attention
+heads, recurrent FLOPs are counted as $6dm$ for SwiGLU and
+$8nd^2+4n^2d+5hn^2+6ndm$ for attention ($n=50$ including the class token).
+These counts exclude the frozen backbone, one-time input projection, final
+classifier, LayerNorm, and lower-order elementwise operations.
+
+\paragraph{Readout benchmark.}
+The measurements in \Cref{tab:cost_main} use the first seed-0 SwiGLU pilot,
+independently of its scientific continuation outcome. Settings are BF16,
+batch 512, $d=512$, $T=32$, gain 1.3, and early window 8, on an RTX 5080
+Laptop GPU. CUDA events measure elapsed device time after 10 warm-ups,
+with the median of 25 timed repetitions reported. Full recurrent-head
+inference starts with cached backbone features and includes recursion and
+classification; it excludes image loading and backbone execution. Additional
+peak allocated memory is measured relative to the warmed-up baseline for
+each repetition and summarised by its median. It excludes baseline model,
+input, and cached-tensor allocations and is not CUDA reserved or total process
+memory. Readout-only measurements start with an already allocated trajectory.
+
+\input{sections/generated_cost_detail}
+
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Readout complexity per example.} Arithmetic excludes the
+recurrent update and classifier. $t\leq T$ is the adaptive stopping step.}
+\label{tab:readout_complexity}
+\small
+\begin{tabular}{lccc}
+\toprule
+Readout & Arithmetic & State storage & Halts recurrence \\
+\midrule
+Terminal & $O(d)$ & $O(d)$ & No \\
+Early window & $O(Kd)$ & $O(d)$ & At $K$ \\
+Adaptive & $O(td)$ & $O(d)$ & Yes \\
+Uniform streaming & $O(Td)$ & $O(d)$ & No \\
+\grace{}, stored & $O(Td)$ & $O(Td)$ & No \\
+\grace{}, streaming & $O(Td)$ & $O(d)$ & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Streaming \grace{} maintains a weighted numerator and denominator while
+discarding each state after use. This explains its memory benefit without
+implying a speedup: the measured eager loop costs 9.68~ms versus 6.95~ms
+for stored-trajectory \grace{}. Adaptive active-set compaction costs 13.84~ms
+for this dense batch. These are implementation- and hardware-specific
+measurements, not architecture-independent latency guarantees.
+
+\paragraph{Training and evaluation allocations.}
+The attention training runs separately record absolute CUDA allocator peaks.
+For eight-step training, allocated/reserved peaks are 871.56/1,100~MiB;
+for 32-step training they are 3,054.91/3,594~MiB. Evaluation peaks are
+219.53/298~MiB in both conditions. The peaks are identical across the three
+seeds within each condition. Completed training wall times are
+499.42/498.15/505.00~s for eight steps and
+1,582.40/1,635.76/2,312.70~s for 32 steps. These absolute allocator peaks
+measure a different quantity from the additional-memory benchmark above.
+
+\paragraph{Execution provenance.}
+Protocols, configurations, seeds, and checkpoint selection were frozen for
+each experiment before its results. The final panel contains 12 completed
+scientific runs, plus the two separate seed-0 pilots. Two interrupted
+32-step attention attempts were retained and restarted from the same frozen
+seed/configuration because optimizer and RNG states were unavailable for an
+exact resume; they are not extra scientific replicates. Scientific artifacts
+retain SHA-256 configuration and checkpoint records. The robustness analyses
+use existing checkpoints, with no post-result changes to architectures,
+gains, readout thresholds, probe regularisation, or the headline selection rule.

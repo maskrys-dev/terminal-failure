@@ -1,0 +1,16 @@
+{
+  "config_sha256": "093e28a08fbc0d90f666bea8d0107b8881da2f2a448a1f2cd200647e4a9a316e",
+  "cuda_available": true,
+  "cudnn": 92000,
+  "gpu_name": "NVIDIA GeForce RTX 5080 Laptop GPU",
+  "gpu_total_bytes": 17094475776,
+  "numpy": "2.4.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "scikit_learn": "1.9.0",
+  "tiny_imagenet_archive_sha256": "6198c8ae015e2b3e007c7841da39ec069199b9aa3bfa943a462022fe5e43c821",
+  "torch": "2.13.0+cu130",
+  "torch_cuda": "13.0",
+  "torchvision": "0.28.0+cu130",
+  "training_precision": "bfloat16"
+}

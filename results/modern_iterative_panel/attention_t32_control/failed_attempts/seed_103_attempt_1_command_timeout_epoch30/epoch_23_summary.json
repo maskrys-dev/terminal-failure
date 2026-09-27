@@ -1,0 +1,9 @@
+{
+  "elapsed_seconds": 1900.0233082771301,
+  "epoch": 23,
+  "learning_rate": 4.3933982822017876e-05,
+  "training_accuracy": 0.99878,
+  "training_loss": 0.8702313813781738,
+  "validation_loss": 1.2249812231063844,
+  "validation_terminal_accuracy": 0.7818
+}

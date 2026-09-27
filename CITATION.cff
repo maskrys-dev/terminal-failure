@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using this code or its results."
+type: software
+title: "Terminal Failure Is Not Computational Failure: A Pre-Collapse Readout Regime in Nonlinear Dynamical Learners"
+authors:
+  - family-names: Maskrey
+    given-names: Rohan
+    email: rohanmaskrey@dunelm.org.uk
+license: CC-BY-4.0
+repository-code: "https://github.com/maskrys-dev/terminal-failure"
+preferred-citation:
+  type: manuscript
+  title: "Terminal Failure Is Not Computational Failure: A Pre-Collapse Readout Regime in Nonlinear Dynamical Learners"
+  authors:
+    - family-names: Maskrey
+      given-names: Rohan
+  year: 2026
+  notes: "Accepted to NeurIPS 2026; arXiv preprint."

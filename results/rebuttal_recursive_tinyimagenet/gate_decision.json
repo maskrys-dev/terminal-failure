@@ -1,0 +1,115 @@
+{
+  "all_states_and_logits_finite": true,
+  "config_sha256": "093e28a08fbc0d90f666bea8d0107b8881da2f2a448a1f2cd200647e4a9a316e",
+  "continue_to_seeds_1_and_2": false,
+  "experiment": "e14_recursive_tinyimagenet_rebuttal",
+  "probe_gate": {
+    "comparison": "probes",
+    "consecutive_gain_pass": true,
+    "early_minus_terminal": {
+      "0.75": 0.013999999999999901,
+      "1.00": 0.02069999999999994,
+      "1.10": 0.0232,
+      "1.20": 0.025699999999999945,
+      "1.30": 0.02639999999999998,
+      "1.40": 0.02729999999999999,
+      "1.50": 0.029000000000000026,
+      "1.60": 0.03070000000000006
+    },
+    "pass": false,
+    "passing_consecutive_gains": [
+      0.75,
+      1.0,
+      1.1
+    ],
+    "stable_pass": false,
+    "stable_terminal_deficit": 0.02069999999999994
+  },
+  "seed": 0,
+  "selected_comparison": null,
+  "shared_head_gate": {
+    "comparison": "shared_head",
+    "consecutive_gain_pass": true,
+    "early_minus_terminal": {
+      "0.75": 0.030399999999999983,
+      "1.00": 0.04930000000000001,
+      "1.10": 0.05799999999999994,
+      "1.20": 0.06309999999999993,
+      "1.30": 0.07050000000000001,
+      "1.40": 0.07789999999999997,
+      "1.50": 0.08389999999999997,
+      "1.60": 0.08960000000000001
+    },
+    "pass": false,
+    "passing_consecutive_gains": [
+      0.75,
+      1.0,
+      1.1
+    ],
+    "stable_pass": false,
+    "stable_terminal_deficit": 0.04930000000000001
+  },
+  "stressed_classification_above_random": true,
+  "trajectory_structure": {
+    "grace_period_shortening": {
+      "0.40": {
+        "pass": false,
+        "stable": 32,
+        "stressed": 32
+      },
+      "0.50": {
+        "pass": false,
+        "stable": 32,
+        "stressed": 32
+      },
+      "0.60": {
+        "pass": false,
+        "stable": 32,
+        "stressed": 32
+      }
+    },
+    "pass": true,
+    "shared_nonmonotonic": {
+      "0.75": {
+        "pass": true,
+        "peak_minus_terminal": 0.03190000000000004,
+        "peak_timestep": 6
+      },
+      "1.00": {
+        "pass": true,
+        "peak_minus_terminal": 0.04959999999999998,
+        "peak_timestep": 5
+      },
+      "1.10": {
+        "pass": true,
+        "peak_minus_terminal": 0.058699999999999974,
+        "peak_timestep": 4
+      },
+      "1.20": {
+        "pass": true,
+        "peak_minus_terminal": 0.06430000000000002,
+        "peak_timestep": 4
+      },
+      "1.30": {
+        "pass": true,
+        "peak_minus_terminal": 0.07100000000000006,
+        "peak_timestep": 4
+      },
+      "1.40": {
+        "pass": true,
+        "peak_minus_terminal": 0.07810000000000006,
+        "peak_timestep": 5
+      },
+      "1.50": {
+        "pass": true,
+        "peak_minus_terminal": 0.08460000000000001,
+        "peak_timestep": 4
+      },
+      "1.60": {
+        "pass": true,
+        "peak_minus_terminal": 0.09119999999999995,
+        "peak_timestep": 3
+      }
+    }
+  }
+}

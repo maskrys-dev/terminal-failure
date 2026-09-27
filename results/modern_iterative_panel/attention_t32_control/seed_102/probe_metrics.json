@@ -1,0 +1,19 @@
+{
+  "accuracy": {
+    "early_mean_steps1_to_8": 0.7952,
+    "terminal_step32": 0.7915,
+    "terminal_step8": 0.7962
+  },
+  "alpha": 1.0,
+  "classifier": "sklearn.linear_model.RidgeClassifier",
+  "config_sha256": "d9aa18dc6136ec595986c6327e3d5fb7194b1b48ffcd54ba4f1586041a42cf3d",
+  "elapsed_seconds": 10.802089214324951,
+  "experiment": "e17c_recursive_attention_tinyimagenet_ttrain32",
+  "seed": 102,
+  "standardisation": false,
+  "terminal_step8_minus_step32_pp": 0.47000000000000375,
+  "training_subset_path": "results/rebuttal_recursive_tinyimagenet/probe_subset_indices.npy",
+  "training_subset_sha256": "9f7378e1c3cde52953ea5096b6b80cfb4b52fff8cafcd87be19d9b366590a19d",
+  "training_subset_size": 20000,
+  "validation_examples": 10000
+}
